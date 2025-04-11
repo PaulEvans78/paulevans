@@ -14,6 +14,10 @@ width: 100%;
 @media (max-width: 960px) {
   grid-template-columns: 1fr 1fr;
   }
+
+  @media (max-width: 767px) {
+  grid-template-columns: 1fr;
+  }
 `;
 
 const StyledWrapper = styled.div`

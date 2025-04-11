@@ -104,7 +104,7 @@ const MusicVideos = () => {
   return (
     <StyledGridContainer>
       <StyledCopy>
-        <h2>Ghost - Hunter's Moon </h2>
+        <h3>Ghost - Hunter's Moon </h3>
 
         <StyledText>
         Music videos remain one of the most creative formats, I have been lucky enough to work with Artists like Katy Perry, Eagle Eye Cherry and MØ. 

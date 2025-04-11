@@ -161,7 +161,7 @@ const Commercials = () => {
     <StyledGridContainer>
       <StyledCopy>
        
-      <h2>Commercial and Social Media Work </h2>
+      <h3>Commercial and Social Media Work </h3>
 
        <StyledText>
        As a Director of Photography, I’ve worked on a range of commercial and social content for major brands including 

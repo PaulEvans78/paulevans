@@ -187,7 +187,7 @@ const FilmTv = () => {
     <StyledGridContainer>
       <StyledCopy>
        
-      <h2>Film and Television </h2>
+      <h3>Film and Television </h3>
 
        <StyledText>
        My background in film and TV has been a constant source of inspiration. 

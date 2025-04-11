@@ -132,7 +132,7 @@ const AboutMe = () => {
 
       <StyledCopy>
        
-<h2>About Me </h2>
+<h3>About Me </h3>
 
        <StyledText>
        I bring a unique blend of creative and technical skills, shaped by years of experience across film, advertising, UX/UI, and frontend development. 

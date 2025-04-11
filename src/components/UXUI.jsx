@@ -124,7 +124,7 @@ const UxUi = () => {
 
       <StyledCopy>
        
-<h2>UX/UI & Frontend</h2>
+<h3>UX/UI & Frontend</h3>
 
        <StyledText>
        In the digital space, I’ve worked with design tools like Figma, Adobe Creative Suite, and Useberry for testing and prototyping. 

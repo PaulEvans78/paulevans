@@ -187,7 +187,7 @@ const Tech = () => {
     <StyledGridContainer>
       <StyledCopy>
        
-      <h2>Emerging Technology </h2>
+      <h3>Emerging Technology </h3>
 
        <StyledText>
        I have a deep interest in emerging tech, especially AI and AR, and how it can elevate both physical and digital brand experiences. 

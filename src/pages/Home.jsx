@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Hero from "../components/Hero";
+import HeroText from "../components/HeroText";
 import ThreeSplit from "../components/ThreeSplit";
 import MasonryGrid from "../components/masonryGrid";
 import CopySection from "../components/CopySection";
@@ -15,23 +16,39 @@ const StyledHomeContainer = styled.section`
   flex-direction: column;
   align-self: center;
   align-content: center;
-  padding-top: 140px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-top: 120px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
 
   @media screen and (max-width: 960px) {
-    padding-top: 160px;
+    padding-top: 100px;
   }
 
   @media screen and (max-width: 767px) {
-    padding-top: 60px;
+    padding-top: 10px;
   }
+
+  @media screen and (max-width: 548px) {
+    padding-top: 40px;
+  }
+`;
+
+const StyledpaddingContainer = styled.div`
+ width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+
 `;
 
 const Home = () => {
   return (
     <StyledHomeContainer>
+
       <Hero />
+
+      <StyledpaddingContainer>
+
+      <HeroText />
 
       <ThreeSplit />
 
@@ -46,6 +63,9 @@ const Home = () => {
       <MasonryGrid2 />
 
       <ThreeSplit2 />
+
+      </StyledpaddingContainer>
+
     </StyledHomeContainer>
   );
 };

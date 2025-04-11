@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Spin as Hamburger } from "hamburger-react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "/logoBely_large.png";
 
 const StyledNav = styled.nav`
   position: absolute;
@@ -20,7 +21,7 @@ const StyledNav = styled.nav`
   padding-left: 4em;
   padding-right: 2em;
   box-sizing: border-box;
-  background-color: var(--main-hero-backgroundcolor);
+  /* background-color: var(--main-hero-backgroundcolor); */
   top: ${({ visible }) => (visible ? "0" : "-160px")};
   transition: top 0.6s;
 
@@ -86,15 +87,15 @@ const StyledNavLogo = styled.p`
   }
 `;
 
-// const StyledHamburgerPELogo = styled.img`
-//   display: none;
+const StyledHamburgerPELogo = styled.img`
+  display: none;
 
-//   @media screen and (max-width: 960px) {
-//     display: flex;
-//     margin-top: 100px;
-//     width: 100px;
-//   }
-// `;
+  @media screen and (max-width: 960px) {
+    display: flex;
+    margin-top: 100px;
+    width: 150px;
+  }
+`;
 
 
 
@@ -103,6 +104,9 @@ const StyledNavul = styled.ul`
   display: flex;
   list-style-type: none;
   margin-left: 1em;
+  padding-bottom: 0;
+  margin-top: 0;
+    margin-bottom: 0em;
 
   @media screen and (max-width: 960px) {
     position: fixed;
@@ -292,14 +296,10 @@ const Navbar = ({ footerRef }) => {
         )}
 
         <StyledImgContainer>
-          {/* <StyledHamburgerPELogo
+          <StyledHamburgerPELogo
             src={logo}
-            autoPlay
-            loop
-            muted
-            playsInline
-            alt="A revolving logo showing the initals PE and a cartton version of Paul Evans.."
-          /> */}
+            alt="A logo showing the initals PE for Paul Evans."
+          />
         </StyledImgContainer>
       </StyledNavul>
 

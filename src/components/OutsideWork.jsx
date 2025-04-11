@@ -124,7 +124,7 @@ const OutsideWork = () => {
     <StyledGridContainer>
       <StyledCopy>
        
-      <h2>Life Outside Work </h2>
+      <h3>Life Outside Work </h3>
 
        <StyledText>
        Surfing, snowboarding and traveling are my biggest passions. When I’m not paddling out into the waves, you’ll probably find me at the gym, 
