@@ -114,7 +114,7 @@ const MasonryGrid = () => {
       const isMobile = window.innerWidth <= 960;
       const filtered = isMobile
         ? allMediaItems.filter(
-            (item) => !item.src.includes("AR_Fashion_Experience__AR_Fashion_Experience.gif")
+            (item) => !item.src.includes("stadiumRunning.jpg")
           )
         : allMediaItems;
       setVisibleItems(filtered);

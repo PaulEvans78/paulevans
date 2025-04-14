@@ -19,7 +19,7 @@ const StyledContentsContainer = styled.section`
   align-items: flex-start;
   text-align: left;
   width: 100%;
-  padding: 0em 1em 3em 1em;
+  padding: 4em 1em 3em 1em;
 
   @media (max-width: 960px) {
     flex-direction: column;
@@ -129,7 +129,7 @@ const StyledIcon = styled.a`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 1em 1em 0em 2em;
+  margin: 1em 1em 0em 1em;
   color: #277DEE;
   transition: transform 0.3s ease, color 0.3s ease;
 

@@ -60,7 +60,7 @@ const StyledContents = styled.div`
   }
 
   @media (max-width: 767px) {
-    aspect-ratio: 3/4;
+    aspect-ratio: 3/5;
   }
 `;
 
@@ -71,14 +71,14 @@ const StyledImg = styled.img`
   /* border-radius: 6px; */
 
   @media (max-width: 767px) {
-    aspect-ratio: 3/4;
+    aspect-ratio: 3/5;
   }
 `;
 
 
 const StyledTitle = styled.div`
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -90,6 +90,8 @@ const StyledTitle = styled.div`
   width: 100%;
   text-align: center;
   z-index: 2; /* make sure it's on top of the image */
+
+
 `;
 
 const StyledOverlay = styled.div`

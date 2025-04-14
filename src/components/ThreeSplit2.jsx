@@ -5,13 +5,13 @@ import Img4 from "/hellyHansen.jpg";
 import styled from "styled-components";
 
 const StyledGridContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-gap: 16px;
-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  width: 100%;
 
-@media (max-width: 768px) {
-  grid-template-columns: 1fr;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -55,18 +55,18 @@ const StyledCaseContents = styled.div`
 
 const StyledVideo = styled.video`
   width: 100%;
-  height: 100%;
-  object-fit: cover; 
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   border-radius: 6px;
 `;
 
 const StyledImg = styled.img`
-    width: 100%;
-    height: 100%;
-  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 6px;
 `;
-
 
 const StyledOpacity = styled.div`
   position: absolute;
@@ -78,7 +78,11 @@ const StyledOpacity = styled.div`
   z-index: 1;
 
   @media (max-width: 960px) {
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.6) 0%, transparent 30%);
+    background: linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.6) 0%,
+      transparent 30%
+    );
     opacity: 1;
   }
 `;
@@ -115,68 +119,59 @@ const StyledCaseMain = styled.section`
 `;
 
 const FourSplitCard = () => {
- 
   return (
     <StyledGridContainer>
-    <StyledWrapper>
-      <StyledCaseMain>
-        <StyledVideo
-          src={Film}
-          autoPlay
-          loop
-          muted
-          playsInline
-          alt="A short film showing the making of pasta and meatballs."
-        />
+      <StyledWrapper>
+        <StyledCaseMain>
+          <StyledVideo
+            playsInline
+            autoPlay
+            muted
+            loop
+            preload="auto"
+            src={Film}
+            alt="A short film showing the making of pasta and meatballs."
+          />
 
-        <StyledOpacity>
-          <StyledCaseContents>
-            <Styledp>Proof of Concept - AI Foods</Styledp>
-          </StyledCaseContents>
-        </StyledOpacity>
-      </StyledCaseMain>
-    </StyledWrapper>
-
-
-<StyledWrapper>
-<StyledCaseMain >
-           <StyledImg
-             src={Img3}
-             alt="From behind we see a man, bare chested. With a large leather coat wrapped around him."
-           />
-
-           <StyledOpacity>
-             <StyledCaseContents>
-               <Styledp>
-               Gael x Patrik Fashion Project
-               </Styledp>
-             </StyledCaseContents>
-           </StyledOpacity>
+          <StyledOpacity>
+            <StyledCaseContents>
+              <Styledp>Proof of Concept - AI Foods</Styledp>
+            </StyledCaseContents>
+          </StyledOpacity>
         </StyledCaseMain>
-</StyledWrapper>
+      </StyledWrapper>
 
-<StyledWrapper>
-<StyledCaseMain >
-           <StyledImg
-             src={Img4}
-             alt="A Yacht sails torwards a sunset, With the Helly Hansen logo."
-           />
+      <StyledWrapper>
+        <StyledCaseMain>
+          <StyledImg
+            src={Img3}
+            alt="From behind we see a man, bare chested. With a large leather coat wrapped around him."
+          />
 
-           <StyledOpacity>
-             <StyledCaseContents>
-               <Styledp>
-                Helly Hansen
-               </Styledp>
-             </StyledCaseContents>
-           </StyledOpacity>
+          <StyledOpacity>
+            <StyledCaseContents>
+              <Styledp>Gael x Patrik Fashion Project</Styledp>
+            </StyledCaseContents>
+          </StyledOpacity>
         </StyledCaseMain>
-</StyledWrapper>
+      </StyledWrapper>
 
-</StyledGridContainer>
+      <StyledWrapper>
+        <StyledCaseMain>
+          <StyledImg
+            src={Img4}
+            alt="A Yacht sails torwards a sunset, With the Helly Hansen logo."
+          />
+
+          <StyledOpacity>
+            <StyledCaseContents>
+              <Styledp>Helly Hansen</Styledp>
+            </StyledCaseContents>
+          </StyledOpacity>
+        </StyledCaseMain>
+      </StyledWrapper>
+    </StyledGridContainer>
   );
 };
 
 export default FourSplitCard;
-
-
-

@@ -17,7 +17,7 @@ const StyledNav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 1em;
+  /* padding-bottom: 1em; */
   padding-left: 4em;
   padding-right: 2em;
   box-sizing: border-box;
@@ -77,13 +77,15 @@ const StyledNavLogo = styled.p`
    font-style: normal;
    font-size: 48px;
    color: var(--main-font-color);
-   margin-top: 0.25em;
+   /* margin-top: 0.25em;*/
+    margin-top: 0em; 
    margin-bottom: 0;
 
    @media (max-width: 768px) {
+    font-size: 40px;
     font-weight: 400;
     -webkit-text-stroke: 0.3px;
-    margin-top: 0.10em;
+    margin-top: 0em;
   }
 `;
 
@@ -146,7 +148,7 @@ const StyledLink = styled(Link)`
   font-weight: 500;
   text-decoration: none;
   text-align: right;
-  margin: 1em 2em 0em 0em;
+  margin: 0em 2em 0em 0em;
   
 
   &:hover {
@@ -209,12 +211,12 @@ const StyledHamburger = styled.div`
     display: flex;
     justify-content: center;
     color: var(--main-font-color);
-    margin-top: 2em;
+    margin-top: 1em;
     margin-right: 1em;
   }
 
   @media screen and (max-width: 767px) {
-    margin-top: 1.5em;
+    margin-top: 0.65em;
     
   }
 `;

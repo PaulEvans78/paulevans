@@ -16,20 +16,20 @@ const StyledHomeContainer = styled.section`
   flex-direction: column;
   align-self: center;
   align-content: center;
-  padding-top: 120px;
+  padding-top: 80px;
   /* padding-left: 20px;
   padding-right: 20px; */
 
   @media screen and (max-width: 960px) {
-    padding-top: 100px;
+    padding-top: 80px;
   }
 
   @media screen and (max-width: 767px) {
-    padding-top: 10px;
+    padding-top: 0px;
   }
 
   @media screen and (max-width: 548px) {
-    padding-top: 40px;
+    padding-top: 20px;
   }
 `;
 

@@ -73,7 +73,8 @@ const StyledCaseContents = styled.div`
 
 const StyledVideo = styled.video`
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover; 
   border-radius: 6px;
 `;
@@ -132,18 +133,19 @@ const StyledCaseMain = styled.section`
   }
 `;
 
-const FourSplitCard = () => {
+const ThreeSplitCard = () => {
  
   return (
     <StyledGridContainer>
     <StyledWrapper>
       <StyledCaseMain>
         <StyledVideo
-          src={Film}
-          autoPlay
-          loop
-          muted
           playsInline
+          autoPlay
+          muted
+          loop
+          preload="auto"
+          src={Film}
           alt="A short version from This is Sweden."
         />
 
@@ -211,7 +213,7 @@ const FourSplitCard = () => {
   );
 };
 
-export default FourSplitCard;
+export default ThreeSplitCard;
 
 
 
