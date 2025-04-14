@@ -1,8 +1,10 @@
 import React from "react";
+import styled from "styled-components";
 import Film from "/Food.mp4";
 import Img3 from "/GaelPatrik.jpg";
 import Img4 from "/hellyHansen.jpg";
-import styled from "styled-components";
+import AiBadgeIcon from "/ai_icon.jpg";
+
 
 const StyledGridContainer = styled.div`
   display: grid;
@@ -118,6 +120,19 @@ const StyledCaseMain = styled.section`
   }
 `;
 
+const AIBadge = styled.img`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  z-index: 3;
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+`;
+
 const FourSplitCard = () => {
   return (
     <StyledGridContainer>
@@ -132,7 +147,7 @@ const FourSplitCard = () => {
             src={Film}
             alt="A short film showing the making of pasta and meatballs."
           />
-
+<AIBadge src={AiBadgeIcon} alt="AI generated content" />
           <StyledOpacity>
             <StyledCaseContents>
               <Styledp>Proof of Concept - AI Foods</Styledp>
@@ -146,6 +161,7 @@ const FourSplitCard = () => {
           <StyledImg
             src={Img3}
             alt="From behind we see a man, bare chested. With a large leather coat wrapped around him."
+            loading="eager"
           />
 
           <StyledOpacity>
@@ -161,6 +177,7 @@ const FourSplitCard = () => {
           <StyledImg
             src={Img4}
             alt="A Yacht sails torwards a sunset, With the Helly Hansen logo."
+            loading="eager"
           />
 
           <StyledOpacity>

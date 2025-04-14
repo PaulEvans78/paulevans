@@ -1,9 +1,10 @@
 import React from "react";
+import styled from "styled-components";
 import Film from "/thisIsSweden.mp4";
 import Img1 from "/xperiaLindaP2.gif";
 import Img2 from "/ginaTricot.jpg";
 import Img from "/stadiumRunning.jpg";
-import styled from "styled-components";
+
 
 const StyledGridContainer = styled.div`
 display: grid;
@@ -133,6 +134,8 @@ const StyledCaseMain = styled.section`
   }
 `;
 
+
+
 const ThreeSplitCard = () => {
  
   return (
@@ -163,6 +166,7 @@ const ThreeSplitCard = () => {
            <StyledImg
              src={Img1}
              alt="Linda Pirra floats mid air in front of a high rise."
+             loading="eager"
            />
 
            <StyledOpacity>
@@ -180,6 +184,7 @@ const ThreeSplitCard = () => {
            <StyledImg
              src={Img}
              alt="A young woman crouches looking over Los Angeles from a view point."
+             loading="eager"
            />
 
            <StyledOpacity>
@@ -197,6 +202,7 @@ const ThreeSplitCard = () => {
            <StyledImg
              src={Img2}
              alt="A young woman dances behind graphics for Gina Tricot."
+             loading="eager"
            />
 
            <StyledOpacity>

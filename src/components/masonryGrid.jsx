@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import AiBadgeIcon from "/ai_icon.jpg";
 
 const allMediaItems = [
   { src: "/lipusPlus.jpg", label: "LipusPlus" },
   { src: "/stadiumRunning.jpg", label: "Stadium Running" },
   { src: "/stadiumSneakers.mp4", label: "Stadium Sneakers" },
-  { src: "/Beauty.mp4", label: "AI Beauty Concept" },
-  { src: "/Avatar_May_TheElectricState.mp4", label: "AI Avatar - May Rosengren for AI News Reel" },
-  { src: "/sns_singles_day.gif", label: "SNS Singles Day (AI)" },
+  { src: "/Beauty.mp4", label: "AI Beauty Concept", isAI: true },
+  { src: "/Avatar_May_TheElectricState.mp4", label: "AI Avatar - May Rosengren for AI News Reel", isAI: true },
+  { src: "/sns_singles_day.gif", label: "SNS Singles Day (AI)", isAI: true },
 ];
 
 const MasonryWrapper = styled.div`
@@ -106,6 +107,19 @@ const TextOverlay = styled.div`
   }
 `;
 
+const AIBadge = styled.img`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  z-index: 3;
+  background-color: white;
+  border-radius: 50%;
+  padding: 2px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+`;
+
 const MasonryGrid = () => {
   const [visibleItems, setVisibleItems] = useState(allMediaItems);
 
@@ -128,7 +142,7 @@ const MasonryGrid = () => {
 
   return (
     <MasonryWrapper>
-      {visibleItems.map(({ src, label }, index) => (
+      {visibleItems.map(({ src, label, isAI }, index) => (
         <MasonryItem key={index}>
           <HoverOverlay>
             {src.endsWith(".mp4") || src.endsWith(".mov") ? (
@@ -136,6 +150,7 @@ const MasonryGrid = () => {
             ) : (
               <StyledImage src={src} alt={`media-${index}`} />
             )}
+            {isAI && <AIBadge src={AiBadgeIcon} alt="AI-generated icon" />}
             <Overlay className="overlay" />
             <TextOverlay className="label">{label}</TextOverlay>
           </HoverOverlay>
