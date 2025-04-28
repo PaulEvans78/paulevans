@@ -110,7 +110,7 @@ const MusicVideos = () => {
         Music videos remain one of the most creative formats, I have been lucky enough to work with Artists like Katy Perry, Eagle Eye Cherry and MØ. 
         Yet one of my favorite projects was shooting the music video for Ghost’s track Hunter’s Moon, 
         which plays during the end credits of Halloween Kills. Shot under tight deadlines and budget constraints, 
-        the video was a creative challenge that paid off—it’s now reached over 10 million views on YouTube.
+        the video was a creative challenge that paid off - it’s now reached over 10 million views on YouTube.
         </StyledText>
       </StyledCopy>
       <StyledWrapper>

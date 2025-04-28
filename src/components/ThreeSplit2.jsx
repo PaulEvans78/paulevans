@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Film from "/Food.mp4";
 import Img3 from "/GaelPatrik.jpg";
 import Img4 from "/hellyHansen.jpg";
 import AiBadgeIcon from "/ai_icon.jpg";
+import Modal from "./modal";
 
 
 const StyledGridContainer = styled.div`
@@ -134,10 +135,38 @@ const AIBadge = styled.img`
 `;
 
 const FourSplitCard = () => {
+
+  const [selectedId, setSelectedId] = useState(null);
+  
+  const openModal = (assetId) => {
+    setSelectedId(assetId);
+  };
+  
+  const closeModal = () => {
+    setSelectedId(null);
+  };
+  
+  
+  useEffect(() => {
+    if (selectedId) {
+      // Lock scroll
+      document.body.style.overflow = "hidden";
+    } else {
+      // Unlock scroll
+      document.body.style.overflow = "auto";
+    }
+  
+    // Clean up if component unmounts while modal is open
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedId]);
+
   return (
+    <>
     <StyledGridContainer>
       <StyledWrapper>
-        <StyledCaseMain>
+        <StyledCaseMain key="aiFood" onClick={() => openModal("aiFood")}>
           <StyledVideo
             playsInline
             autoPlay
@@ -145,7 +174,6 @@ const FourSplitCard = () => {
             loop
             preload="auto"
             src={Film}
-            alt="A short film showing the making of pasta and meatballs."
           />
 <AIBadge src={AiBadgeIcon} alt="AI generated content" />
           <StyledOpacity>
@@ -157,7 +185,7 @@ const FourSplitCard = () => {
       </StyledWrapper>
 
       <StyledWrapper>
-        <StyledCaseMain>
+        <StyledCaseMain key="gael" onClick={() => openModal("gael")}>
           <StyledImg
             src={Img3}
             alt="From behind we see a man, bare chested. With a large leather coat wrapped around him."
@@ -173,7 +201,7 @@ const FourSplitCard = () => {
       </StyledWrapper>
 
       <StyledWrapper>
-        <StyledCaseMain>
+        <StyledCaseMain key="helly" onClick={() => openModal("helly")}>
           <StyledImg
             src={Img4}
             alt="A Yacht sails torwards a sunset, With the Helly Hansen logo."
@@ -188,6 +216,11 @@ const FourSplitCard = () => {
         </StyledCaseMain>
       </StyledWrapper>
     </StyledGridContainer>
+
+    {selectedId && (
+  <Modal caseId={selectedId} onClose={closeModal} />
+)}
+    </>
   );
 };
 

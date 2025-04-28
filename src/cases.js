@@ -1,0 +1,212 @@
+export const casesData = [
+  {
+    id: "sweden",
+    title: "This is Sweden",
+    type: "video",
+    src: "/thisIsSwedenWide.mp4",
+    description: "A short version from This is Sweden. A film for a Swedish company launching in the USA. Filmed in multiple locations around Sweden with a mini team. Contact me to see the full version.",
+  },
+  {
+    id: "linda",
+    title: "Xperia - Linda Pira",
+    type: "video",
+    src: "/xperiaLindaP.mp4",
+    description: "A social media Campaign for Sony Xperia with Swedish artists Linda Pira and Lorentz. Small team and available light. Use the right arrow to see Xperia with Lorentz.",
+    // accompanyingAssets: ["/xperiaLorentz.png"]
+  },
+  {
+    id: "lorentz",
+    title: "Xperia Lorentz",
+    type: "video",
+    src: "/xperiaLorentz.mp4",
+    description: "A social media Campaign for Sony Xperia with Swedish artists Linda Pira and Lorentz. Small team and available light.",
+    // accompanyingAssets: ["/xperiaLorentz.png"]
+  },
+  {
+    id: "stadium",
+    title: "Stadium Running",
+    type: "video",
+    src: "/stadiumRunning.mp4",
+    description: "Filming this project alongside a still shoot meant we had to be creative and find solutions on the spot, developing the idea as we progressed.",
+    // accompanyingAssets: ["/stadiumRunning.jpg", "/stadiumRunning.jpg", "/stadiumRunning.jpg"]
+  },
+  {
+    id: "gina",
+    title: "Gina Tricot",
+    type: "video",
+    src: "/ginaTricot.mp4",
+    description: "A social media campaign for Gina Tricot. Following four woman in Stockholm. Small crew and using available light where possible.",
+  },
+  {
+    id: "lipus",
+    title: "lipusPlus",
+    type: "image",
+    src: "/lipusPlus.jpg",
+    description: "Created a landing page highlighting LipusPlus and Hammarby handballs partnership. Content design, UX/UI design and frontend developer. To see a trailer for LipusPlus partnership use the right arrow.",
+  },
+  {
+    id: "lipusFilm",
+    title: "lipusPlus",
+    type: "video",
+    src: "/lipusplus_short.mp4",
+    description: "Created a landing page highlighting LipusPlus and Hammarby handballs partnership. Content design, UX/UI design and frontend developer. To see a trailer for LipusPlus partnership use the right arrow.",
+  },
+  {
+    id: "sneakers",
+    title: "Stadium Sneakers",
+    type: "video",
+    src: "/stadiumSneakers.mp4",
+    description: "Filming this project alongside a still shoot we created a fun music video style spot.",
+    // accompanyingAssets: ["/stadiumRunning.jpg", "/stadiumRunning.jpg", "/stadiumRunning.jpg"]
+  },
+  {
+    id: "beauty",
+    title: "AI Beauty",
+    type: "video",
+    src: "/Beauty.mp4",
+    description: "Created an Beauty film with AI for proof of concept."
+  },
+  {
+    id: "avatar",
+    title: "AI News Reel",
+    type: "video",
+    src: "/Avatar_May_TheElectricState.mp4",
+    description: "Created an AI avatar and a news channel for AI news. May the news anchor has her own TikTok and LinkedIn profile."
+  },
+  {
+    id: "sns",
+    title: "SNS and Singles Day",
+    type: "image",
+    src: "/sns_singles_day.gif",
+    description: "Created content for Sneaker n Stuff and singles day campaign. AI generated content retouched in Photoshop."
+  },
+  {
+    id: "tunn",
+    title: "Grandiosa",
+    type: "video",
+    src: "/grandiosa.mp4",
+    description: "A campaign for Grandiosa. TVC and social media.",
+  },
+  {
+    id: "hemmapizza",
+    title: "Grandiosa",
+    type: "video",
+    src: "/grandiosa2.mp4",
+    description: "A campaign for Grandiosa. TVC and social media.",
+  },
+  {
+    id: "new",
+    title: "New Balance",
+    type: "video",
+    src: "/newBalance.mp4",
+    description: "A brand awareness film for New Balance in asscociation with Sneakers n Stuff. Highlighting the handmade quality of New Balance products. Filmed in the UK.",
+  },
+  {
+    id: "tracy",
+    title: "Tracy Trackers",
+    type: "video",
+    src: "/tracyTrackers.mp4",
+    description: "A spot for Tracy Trackers. A self learning collar that gives your dog a voice, telling you about its health and needs in real time.",
+  },
+  {
+    id: "sports",
+    title: "Viagra Boys - Sports",
+    type: "video",
+    src: "/viagraBoysSports.mp4",
+    description: "A grammies nominated Video for Viagra Boys debut single - sports.",
+  },
+  {
+    id: "ghost",
+    title: "Ghost - Hunters Moon",
+    type: "video",
+    src: "/ghost.mp4",
+    description: "Shot under tight deadlines and budget constraints, the video was a creative challenge that paid off - it’s now reached over 10 million views on YouTube.",
+  },
+  {
+    id: "ansiktet",
+    title: "Ansiktet - Fyra Våningar Upp",
+    type: "video",
+    src: "/ansiktet.mp4",
+    description: "A short film for Ansiktet consisting of four tracks. The film was shot in Estonia using a small local team, natural light and Kodak 35mm.",
+  },
+  {
+    id: "aller",
+    title: "Aller Media",
+    type: "image",
+    src: "/allerPrintSummer.jpg",
+    description: "Summer campaign for Aller Media. Posters, magazines, TVC and social media. Use the arrows to see more.",
+  },
+  {
+    id: "aller2",
+    title: "Aller Media",
+    type: "image",
+    src: "/allerPrintSummer2.jpg",
+    description: "Summer campaign for Aller Media. Posters, magazines, TVC and social media. Use the arrows to see more.",
+  },
+  {
+    id: "allerSoMe",
+    title: "Aller Media",
+    type: "image",
+    src: "/allerMedia_SoMe.jpg",
+    description: "Christmas campaign for Aller Media. Posters, magazines, TVC and social media. Use the arrows to see more.",
+  },
+  {
+    id: "allerFilm",
+    title: "Aller Media",
+    type: "video",
+    src: "/allerMediaJul.mp4",
+    description: "Christmas campaign for Aller Media. Posters, magazines, TVC and social media. Use the arrows to see more.",
+  },
+  {
+    id: "katy",
+    title: "Katy Perry",
+    type: "video",
+    src: "/katyPerry.mp4",
+    description: "Promos for Katy Perry's album ROAR.",
+  },
+  {
+    id: "gant",
+    title: "Gant Diamond G",
+    type: "video",
+    src: "/gantDiamondG.mp4",
+    description: "Inspirational film showcasing Gants Diamond G collection..",
+  },
+  {
+    id: "gant2",
+    title: "Gant Diamond G",
+    type: "video",
+    src: "/gantDiamondG2.mp4",
+    description: "Inspirational film showcasing Gants Diamond G collection..",
+  },
+  {
+    id: "landrover",
+    title: "Land Rover Concept - AI",
+    type: "image",
+    src: "/landroverConcept.gif",
+    role: "Role: AI Creative Specialist",
+    description: "A spec project conceptualising a Landrover advert with AI tools..",
+  },
+  {
+    id: "aiFood",
+    title: "AI Foods",
+    type: "video",
+    src: "/Food.mp4",
+    description: "Created an AI food craving film for proof of concept."
+  },
+  {
+    id: "gael",
+    title: "Gael x Patrik",
+    type: "image",
+    src: "/GaelPatrikThree.png",
+    description: "A fashion project.",
+  },
+  {
+    id: "helly",
+    title: "Helly Hansen",
+    type: "video",
+    src: "/hellyHansen.mp4",
+    description: "Online content for Helly Hansens shoes.",
+  }
+];
+
+export default casesData;

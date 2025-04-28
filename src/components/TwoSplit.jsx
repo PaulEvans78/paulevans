@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Film from "../assets/ghost.mov";
 import Img from "/Ansiktet.jpg";
 import styled from "styled-components";
+import Modal from "./modal"; 
 
 const StyledGridContainer = styled.div`
 display: grid;
@@ -116,10 +117,37 @@ const StyledCaseMain = styled.section`
 
 const TwoSplitCard = () => {
  
+  const [selectedId, setSelectedId] = useState(null);
+  
+  const openModal = (assetId) => {
+    setSelectedId(assetId);
+  };
+  
+  const closeModal = () => {
+    setSelectedId(null);
+  };
+  
+  
+  useEffect(() => {
+    if (selectedId) {
+      // Lock scroll
+      document.body.style.overflow = "hidden";
+    } else {
+      // Unlock scroll
+      document.body.style.overflow = "auto";
+    }
+  
+    // Clean up if component unmounts while modal is open
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedId]);
+
   return (
+    <>
     <StyledGridContainer>
     <StyledWrapper>
-      <StyledCaseMain>
+      <StyledCaseMain key="ghost" onClick={() => openModal("ghost")}>
         <StyledVideo
           src={Film}
           autoPlay
@@ -138,7 +166,7 @@ const TwoSplitCard = () => {
     </StyledWrapper>
 
 <StyledWrapper>
-<StyledCaseMain >
+<StyledCaseMain key="ansiktet" onClick={() => openModal("ansiktet")}>
            <StyledImg
              src={Img}
              alt="Two men in tracksuits stand by a purple soviet car."
@@ -154,6 +182,11 @@ const TwoSplitCard = () => {
         </StyledCaseMain>
 </StyledWrapper>
 </StyledGridContainer>
+
+{selectedId && (
+  <Modal caseId={selectedId} onClose={closeModal} />
+)}
+</>
   );
 };
 

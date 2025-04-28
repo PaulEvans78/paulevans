@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Modal from "./modal"; 
 import Img1 from "/grandiosa.jpg";
 import Img2 from "/newBalanceImg.jpg";
 import Img3 from "/tracyTrackers.jpg";
@@ -118,10 +119,37 @@ const StyledCaseMain = styled.section`
 
 const FourSplitCard = () => {
  
+const [selectedId, setSelectedId] = useState(null);
+
+const openModal = (assetId) => {
+  setSelectedId(assetId);
+};
+
+const closeModal = () => {
+  setSelectedId(null);
+};
+
+
+useEffect(() => {
+  if (selectedId) {
+    // Lock scroll
+    document.body.style.overflow = "hidden";
+  } else {
+    // Unlock scroll
+    document.body.style.overflow = "auto";
+  }
+
+  // Clean up if component unmounts while modal is open
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [selectedId]);
+
   return (
+    <>
     <StyledGridContainer>
     <StyledWrapper>
-      <StyledCaseMain>
+      <StyledCaseMain key="tunn" onClick={() => openModal("tunn")}>
       <StyledImg
              src={Img1}
              alt="A young woman looks into an oven."
@@ -137,7 +165,7 @@ const FourSplitCard = () => {
     </StyledWrapper>
 
 <StyledWrapper>
-<StyledCaseMain >
+<StyledCaseMain key="new" onClick={() => openModal("new")}>
            <StyledImg
              src={Img2}
              alt="Red inner soles from New Balance trainers."
@@ -155,7 +183,7 @@ const FourSplitCard = () => {
 </StyledWrapper>
 
 <StyledWrapper>
-<StyledCaseMain >
+<StyledCaseMain key="tracy" onClick={() => openModal("tracy")}>
            <StyledImg
              src={Img3}
              alt="A white dog in a bomber jacket."
@@ -172,7 +200,7 @@ const FourSplitCard = () => {
 </StyledWrapper>
 
 <StyledWrapper>
-<StyledCaseMain >
+<StyledCaseMain key="sports" onClick={() => openModal("sports")}>
 <StyledVideo
           src={Film2}
           autoPlay
@@ -193,6 +221,12 @@ const FourSplitCard = () => {
 </StyledWrapper>
 
 </StyledGridContainer>
+
+{selectedId && (
+  <Modal caseId={selectedId} onClose={closeModal} />
+)}
+
+</>
   );
 };
 

@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AiBadgeIcon from "/ai_icon.jpg";
+import Modal from "./modal"; 
 
 const mediaItems = [
-  { src: "/allerPrintSummer.jpg", label: "Aller Print Summer" },
-  { src: "/katyPerryRoar.jpg", label: "Katy Perry ROAR" },
-  { src: "/gant.png", label: "Gant Diamond G" },
-  { src: "/landroverConcept.gif", label: "Land Rover Concept (AI)", isAI: true },
+  { id: "aller", src: "/allerPrintSummer.jpg", label: "Aller Print Summer", isAI: false },
+  { id: "katy", src: "/katyPerryRoar.jpg", label: "Katy Perry ROAR", isAI: false },
+  { id: "gant2", src: "/gant.png", label: "Gant Diamond G", isAI: false },
+  { id: "landrover", src: "/landroverConcept.gif", label: "Land Rover Concept (AI)", isAI: true },
 ];
 
 const MasonryWrapper = styled.div`
   column-count: 1;
   column-gap: 16px;
   padding-top: 16px;
-  padding-bottom:0;
+  padding-bottom: 0;
 
   @media (min-width: 768px) {
     column-count: 2;
@@ -121,42 +122,64 @@ const AIBadge = styled.img`
 `;
 
 const MasonryGrid = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+const [selectedCaseId, setSelectedCaseId] = useState(null);
+
+
   const [visibleItems, setVisibleItems] = useState(mediaItems);
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const openModal = (id) => {
+    setSelectedCaseId(id);
+    setIsModalOpen(true);
+  };
+
   
-    useEffect(() => {
-      const handleResize = () => {
-        const isMobile = window.innerWidth <= 960;
-        const filtered = isMobile
-          ? mediaItems.filter(
-              (item) => !item.src.includes("landroverConcept.gif")
-            )
-          : mediaItems;
-        setVisibleItems(filtered);
-      };
-  
-      handleResize(); // initial check
-      window.addEventListener("resize", handleResize); // update on resize
-  
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-  
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth <= 960;
+      const filtered = isMobile
+        ? mediaItems.filter((item) => !item.src.includes("landroverConcept.gif"))
+        : mediaItems;
+      setVisibleItems(filtered);
+    };
+
+    handleResize(); // initial check
+    window.addEventListener("resize", handleResize); // update on resize
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
-    <MasonryWrapper>
-      {visibleItems.map(({ src, label, isAI }, index) => (
-        <MasonryItem key={index}>
-          <HoverOverlay>
-            {src.endsWith(".mp4") || src.endsWith(".mov") ? (
-              <StyledVideo src={src} autoPlay loop muted playsInline />
-            ) : (
-              <StyledImage src={src} alt={`media-${index}`} />
-            )}
-            {isAI && <AIBadge src={AiBadgeIcon} alt="AI-generated icon" />}
-            <Overlay className="overlay" />
-            <TextOverlay className="label">{label}</TextOverlay>
-          </HoverOverlay>
-        </MasonryItem>
-      ))}
-    </MasonryWrapper>
+    <>
+      <MasonryWrapper>
+      {visibleItems.map(({ id, src, label, isAI }) => (
+  <MasonryItem key={id} onClick={() => openModal(id)}>
+    <HoverOverlay>
+      {src.endsWith(".mp4") || src.endsWith(".webm") ? (
+        <StyledVideo src={src} autoPlay muted loop />
+      ) : (
+        <StyledImage src={src} alt={label} />
+      )}
+
+      <Overlay className="overlay" />
+      <TextOverlay className="label">{label}</TextOverlay>
+      {isAI && <AIBadge src={AiBadgeIcon} alt="AI-generated" />}
+    </HoverOverlay>
+  </MasonryItem>
+))}
+
+
+      </MasonryWrapper>
+
+      {isModalOpen && (
+  <Modal
+    onClose={() => setIsModalOpen(false)}
+    caseId={selectedCaseId}
+  />
+        
+      )}
+    </>
   );
 };
 

@@ -1,4 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+// import cases from "../cases"; 
+import Modal from "./modal"; 
+
 import styled from "styled-components";
 import Film from "/thisIsSweden.mp4";
 import Img1 from "/xperiaLindaP2.gif";
@@ -137,11 +141,40 @@ const StyledCaseMain = styled.section`
 
 
 const ThreeSplitCard = () => {
+
+const [selectedId, setSelectedId] = useState(null);
+
+const openModal = (assetId) => {
+  setSelectedId(assetId);
+};
+
+const closeModal = () => {
+  setSelectedId(null);
+};
+
+
+useEffect(() => {
+  if (selectedId) {
+    // Lock scroll
+    document.body.style.overflow = "hidden";
+  } else {
+    // Unlock scroll
+    document.body.style.overflow = "auto";
+  }
+
+  // Clean up if component unmounts while modal is open
+  return () => {
+    document.body.style.overflow = "auto";
+  };
+}, [selectedId]);
+
+
  
   return (
+    <>
     <StyledGridContainer>
     <StyledWrapper>
-      <StyledCaseMain>
+      <StyledCaseMain key="sweden" onClick={() => openModal("sweden")}>
         <StyledVideo
           playsInline
           autoPlay
@@ -149,7 +182,6 @@ const ThreeSplitCard = () => {
           loop
           preload="auto"
           src={Film}
-          alt="A short version from This is Sweden."
         />
 
         <StyledOpacity>
@@ -162,17 +194,17 @@ const ThreeSplitCard = () => {
 
 
 <StyledWrapper>
-<StyledCaseMain >
+<StyledCaseMain key="linda" onClick={() => openModal("linda")}>
            <StyledImg
              src={Img1}
-             alt="Linda Pirra floats mid air in front of a high rise."
+             alt="Linda Pira floats mid air in front of a high rise."
              loading="eager"
            />
 
            <StyledOpacity>
              <StyledCaseContents>
                <Styledp>
-                Linda Pirra
+                Linda Pira
                </Styledp>
              </StyledCaseContents>
            </StyledOpacity>
@@ -180,7 +212,7 @@ const ThreeSplitCard = () => {
 </StyledWrapper>
 
 <StyledSmallDevicesWrapper>
-<StyledCaseMain >
+<StyledCaseMain key="stadium" onClick={() => openModal("stadium")}>
            <StyledImg
              src={Img}
              alt="A young woman crouches looking over Los Angeles from a view point."
@@ -198,7 +230,7 @@ const ThreeSplitCard = () => {
 </StyledSmallDevicesWrapper>
 
 <StyledWrapper>
-<StyledCaseMain >
+<StyledCaseMain key="gina" onClick={() => openModal("gina")}>
            <StyledImg
              src={Img2}
              alt="A young woman dances behind graphics for Gina Tricot."
@@ -216,10 +248,15 @@ const ThreeSplitCard = () => {
 </StyledWrapper>
 
 </StyledGridContainer>
+
+{selectedId && (
+  <Modal caseId={selectedId} onClose={closeModal} />
+)}
+</>
   );
 };
 
+
+
 export default ThreeSplitCard;
-
-
 
