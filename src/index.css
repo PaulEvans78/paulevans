@@ -64,7 +64,7 @@ h1 {
   }
 
   @media (max-width: 548px) {
-    line-height: 108px;
+    line-height: 100px;
   }
 }
 
@@ -81,6 +81,7 @@ font-style: normal;
   @media (max-width: 768px) {
     font-weight: 400;
     -webkit-text-stroke: 0.3px;
+    margin-top: 20px;
   }
 }
 

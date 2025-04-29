@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { casesData } from "../cases"; 
+import { casesData } from "../cases";
 
-// Styled components
 const ModalOverlay = styled.div`
   position: fixed;
   top: 0;
@@ -17,42 +16,44 @@ const ModalOverlay = styled.div`
 `;
 
 const ModalContent = styled.div`
+  position: relative;
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-template-rows: 1fr auto;
   gap: 16px;
   width: 100vw;
-  height: 100vh;
+  /* height: 100dvh;*/
+  height: calc(var(--vh, 1vh) * 100); 
   background: white;
-  border-radius: 8px;
+  border-radius: 6px;
   overflow: hidden;
   position: relative;
 
+  padding-top: env(safe-area-inset-top);
+
   @media (max-width: 960px) {
     width: 100vw;
-    /* height: 100vh; */
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
-    /* padding-top: 80px; */
+    border-radius: 0px;
   }
   @media (max-width: 720px) {
-    padding-top: 80px;
+    /* padding-top: 80px; */
+    padding-top: calc(80px + env(safe-area-inset-top)); 
+    height: auto;
+    max-height: 100vh;
+    overflow-y: auto;
   }
 `;
 
 const AssetWrapper = styled.div`
   position: relative;
-  align-content: center;
   width: 100%;
   height: 100%;
-  padding-left: 20px;
-  padding-top: 20px;
   overflow: hidden;
-
-  @media (max-width: 960px) {
-    padding-left: 0px;
-    align-content: flex-start;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const AssetImage = styled.img`
@@ -65,7 +66,6 @@ const AssetImage = styled.img`
 const AssetVideoWrapper = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,24 +73,30 @@ const AssetVideoWrapper = styled.div`
   ${({ aspectRatio }) => {
     if (aspectRatio === "1:1") {
       return `
-        padding-top: 100%;  /* Keeps aspect ratio 1:1 */
+        padding-top: 100%;
         height: 0;
       `;
     }
     if (aspectRatio === "16:9") {
       return `
-        padding-top: 56.25%;  /* 16:9 aspect ratio */
+        padding-top: 56.25%;
         height: 0;
       `;
     }
+    return `
+      height: 100%;
+    `;
   }}
 `;
 
-// const AssetVideo = styled.video`
+// const AssetContainer = styled.div`
+//   position: relative;
 //   width: 100%;
-//   height: 100%;
-//   object-fit: contain;
-//   border-radius: 6px;
+//   max-width: 100%;
+//   height: auto;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
 // `;
 
 const AssetVideo = styled.video`
@@ -99,16 +105,20 @@ const AssetVideo = styled.video`
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* This ensures that the video fills the container without distorting */
+  object-fit: contain;
   border-radius: 6px;
+
+  @media (max-width: 960px) {
+    border-radius: 0px;
+  }
 `;
 
 const TextWrapper = styled.div`
-  margin-top: 60px;
+  margin-top: 80px;
   padding: 16px;
   display: flex;
   flex-direction: column;
-  
+
   @media (max-width: 960px) {
     margin-top: 0px;
   }
@@ -120,15 +130,11 @@ const Title = styled.h3`
   color: #333;
 `;
 
-
-
 const Copy = styled.p`
   font-size: 1rem;
   color: #555;
   margin-top: 10px;
 `;
-
-
 
 const AccompanyingAssets = styled.div`
   position: absolute;
@@ -138,7 +144,6 @@ const AccompanyingAssets = styled.div`
   gap: 10px;
   max-width: 100%;
   bottom: 110px;
-  /* max-height: 20%; */
   overflow-y: auto;
 `;
 
@@ -151,17 +156,20 @@ const AccompanyingAsset = styled.img`
 
 const CloseButton = styled.button`
   position: absolute;
-  top: 10px;
+  top: 20px;
   right: 10px;
-  width: 50px;
-  height: 50px;
+  width: 50px;   
+  height: 50px; 
   background: rgba(0, 0, 0, 0.977);
   color: white;
   font-size: 2rem;
-  border: none;
   border-radius: 50%;
-  padding: 8px;
+  border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 
   &:hover {
     background: rgba(0, 0, 0, 0.7);
@@ -180,40 +188,15 @@ const NavArrow = styled.button`
   cursor: pointer;
   z-index: 10;
 
+  ${({ direction }) => (direction === "left" ? "left: 10px;" : "right: 10px;")}
+
   &:hover {
     background: rgba(0, 0, 0, 0.8);
   }
-
-  ${({ direction }) =>
-    direction === "left" ? "left: 30px;" : "right: 10px;"}
-
-@media (max-width: 960px) {
-  top: 45%;
-  ${({ direction }) =>
-    direction === "left" ? "left: 10px;" : "right: 10px;"}
-  }
-
-  @media (max-width: 720px) {
-  top: 40%;
-  }
-
-  @media (max-width: 580px) {
-  top: 35%;
-  }
-
-  @media (max-width: 450px) {
-  top: 30%;
-  }
 `;
 
-
 const Modal = ({ onClose, caseId }) => {
-
-
-
-
   const [currentId, setCurrentId] = useState(caseId);
-
 
   useEffect(() => {
     setCurrentId(caseId);
@@ -223,7 +206,6 @@ const Modal = ({ onClose, caseId }) => {
   const caseItem = casesData[currentIndex];
 
   if (!caseItem) return null;
-
 
   const getAspectRatio = (src) => {
     const videoElement = document.createElement("video");
@@ -252,9 +234,6 @@ const Modal = ({ onClose, caseId }) => {
     }
   }, [caseItem]);
 
-
-
-  
   const goPrev = () => {
     const newIndex = (currentIndex - 1 + casesData.length) % casesData.length;
     setCurrentId(casesData[newIndex].id);
@@ -265,31 +244,58 @@ const Modal = ({ onClose, caseId }) => {
     setCurrentId(casesData[newIndex].id);
   };
 
+  useEffect(() => {
+    const setVH = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+  
+    setVH();
+    window.addEventListener("resize", setVH);
+    return () => window.removeEventListener("resize", setVH);
+  }, []);
+
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
         <AssetWrapper>
-        <NavArrow direction="left" onClick={goPrev}>‹</NavArrow>
-        {caseItem.type === "video" ? (
-           <AssetVideoWrapper aspectRatio={aspectRatio}>
-  <AssetVideo playsInline autoPlay controls loop src={caseItem.src} />
-  </AssetVideoWrapper>
-) : (
-  <AssetImage src={caseItem.src} alt={caseItem.title} />
-)}
-<NavArrow direction="right" onClick={goNext}>›</NavArrow>
+          {/* <AssetContainer> */}
+            <NavArrow direction="left" onClick={goPrev}>
+              ‹
+            </NavArrow>
+            {caseItem.type === "video" ? (
+              <AssetVideoWrapper aspectRatio={aspectRatio}>
+                <AssetVideo
+                  playsInline
+                  autoPlay
+                  controls
+                  loop
+                  src={caseItem.src}
+                />
+              </AssetVideoWrapper>
+            ) : (
+              <AssetImage src={caseItem.src} alt={caseItem.title} />
+            )}
+            <NavArrow direction="right" onClick={goNext}>
+              ›
+            </NavArrow>
+          {/* </AssetContainer> */}
         </AssetWrapper>
 
         <TextWrapper>
           <Title>{caseItem.title}</Title>
-          <Copy>{caseItem.description || "Opps, I forgot to add a description."}</Copy>
-        
-          
+          <Copy>
+            {caseItem.description || "Opps, I forgot to add a description."}
+          </Copy>
 
           <AccompanyingAssets>
             {caseItem.accompanyingAssets &&
               caseItem.accompanyingAssets.map((asset, index) => (
-                <AccompanyingAsset key={index} src={asset} alt={`Accompanying Asset ${index + 1}`} />
+                <AccompanyingAsset
+                  key={index}
+                  src={asset}
+                  alt={`Accompanying Asset ${index + 1}`}
+                />
               ))}
           </AccompanyingAssets>
         </TextWrapper>

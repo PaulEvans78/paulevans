@@ -39,7 +39,7 @@ export const casesData = [
   },
   {
     id: "lipus",
-    title: "lipusPlus",
+    title: "LipusPlus",
     type: "image",
     src: "/lipusPlus.jpg",
     description: "Created a landing page highlighting LipusPlus and Hammarby handballs partnership. Content design, UX/UI design and frontend developer. To see a trailer for LipusPlus partnership use the right arrow.",
@@ -55,7 +55,7 @@ export const casesData = [
     id: "sneakers",
     title: "Stadium Sneakers",
     type: "video",
-    src: "/stadiumSneakers.mp4",
+    src: "/stadiumSneakersWide.mp4",
     description: "Filming this project alongside a still shoot we created a fun music video style spot.",
     // accompanyingAssets: ["/stadiumRunning.jpg", "/stadiumRunning.jpg", "/stadiumRunning.jpg"]
   },
@@ -78,7 +78,7 @@ export const casesData = [
     title: "SNS and Singles Day",
     type: "image",
     src: "/sns_singles_day.gif",
-    description: "Created content for Sneaker n Stuff and singles day campaign. AI generated content retouched in Photoshop."
+    description: "Created banners for Sneaker n Stuff, singles day campaign. AI generated content retouched in Photoshop."
   },
   {
     id: "tunn",
