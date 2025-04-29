@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-// import cases from "../cases"; 
-import Modal from "./modal"; 
+import Modal from "./modal";
 
 import styled from "styled-components";
 import Film from "/thisIsSweden.mp4";
@@ -9,19 +8,18 @@ import Img1 from "/xperiaLindaP2.gif";
 import Img2 from "/ginaTricot.jpg";
 import Img from "/stadiumRunning.jpg";
 
-
 const StyledGridContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-gap: 16px;
-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  width: 100%;
 
-@media (max-width: 960px) {
-  grid-template-columns: 1fr 1fr;
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr 1fr;
   }
 
   @media (max-width: 767px) {
-  grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -43,7 +41,7 @@ const StyledSmallDevicesWrapper = styled.div`
   border-radius: 6px;
 
   @media (max-width: 960px) {
-  display: flex;
+    display: flex;
   }
 `;
 
@@ -80,17 +78,16 @@ const StyledVideo = styled.video`
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 6px;
 `;
 
 const StyledImg = styled.img`
-    width: 100%;
-    height: 100%;
-  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 6px;
 `;
-
 
 const StyledOpacity = styled.div`
   position: absolute;
@@ -102,7 +99,11 @@ const StyledOpacity = styled.div`
   z-index: 1;
 
   @media (max-width: 960px) {
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.6) 0%, transparent 30%);
+    background: linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.6) 0%,
+      transparent 30%
+    );
     opacity: 1;
   }
 `;
@@ -138,125 +139,106 @@ const StyledCaseMain = styled.section`
   }
 `;
 
-
-
 const ThreeSplitCard = () => {
+  const [selectedId, setSelectedId] = useState(null);
 
-const [selectedId, setSelectedId] = useState(null);
-
-const openModal = (assetId) => {
-  setSelectedId(assetId);
-};
-
-const closeModal = () => {
-  setSelectedId(null);
-};
-
-
-useEffect(() => {
-  if (selectedId) {
-    // Lock scroll
-    document.body.style.overflow = "hidden";
-  } else {
-    // Unlock scroll
-    document.body.style.overflow = "auto";
-  }
-
-  // Clean up if component unmounts while modal is open
-  return () => {
-    document.body.style.overflow = "auto";
+  const openModal = (assetId) => {
+    setSelectedId(assetId);
   };
-}, [selectedId]);
 
+  const closeModal = () => {
+    setSelectedId(null);
+  };
 
- 
+  useEffect(() => {
+    if (selectedId) {
+      // Lock scroll
+      document.body.style.overflow = "hidden";
+    } else {
+      // Unlock scroll
+      document.body.style.overflow = "auto";
+    }
+
+    // Clean up if component unmounts while modal is open
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedId]);
+
   return (
     <>
-    <StyledGridContainer>
-    <StyledWrapper>
-      <StyledCaseMain key="sweden" onClick={() => openModal("sweden")}>
-        <StyledVideo
-          playsInline
-          autoPlay
-          muted
-          loop
-          preload="auto"
-          src={Film}
-        />
+      <StyledGridContainer>
+        <StyledWrapper>
+          <StyledCaseMain key="sweden" onClick={() => openModal("sweden")}>
+            <StyledVideo
+              playsInline
+              autoPlay
+              muted
+              loop
+              preload="auto"
+              src={Film}
+            />
 
-        <StyledOpacity>
-          <StyledCaseContents>
-            <Styledp>This is Sweden</Styledp>
-          </StyledCaseContents>
-        </StyledOpacity>
-      </StyledCaseMain>
-    </StyledWrapper>
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>This is Sweden</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
 
+        <StyledWrapper>
+          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+            <StyledImg
+              src={Img1}
+              alt="Linda Pira floats mid air in front of a high rise."
+              loading="eager"
+            />
 
-<StyledWrapper>
-<StyledCaseMain key="linda" onClick={() => openModal("linda")}>
-           <StyledImg
-             src={Img1}
-             alt="Linda Pira floats mid air in front of a high rise."
-             loading="eager"
-           />
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Linda Pira</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
 
-           <StyledOpacity>
-             <StyledCaseContents>
-               <Styledp>
-                Linda Pira
-               </Styledp>
-             </StyledCaseContents>
-           </StyledOpacity>
-        </StyledCaseMain>
-</StyledWrapper>
+        <StyledSmallDevicesWrapper>
+          <StyledCaseMain key="stadium" onClick={() => openModal("stadium")}>
+            <StyledImg
+              src={Img}
+              alt="A young woman crouches looking over Los Angeles from a view point."
+              loading="eager"
+            />
 
-<StyledSmallDevicesWrapper>
-<StyledCaseMain key="stadium" onClick={() => openModal("stadium")}>
-           <StyledImg
-             src={Img}
-             alt="A young woman crouches looking over Los Angeles from a view point."
-             loading="eager"
-           />
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Stadium Running</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledSmallDevicesWrapper>
 
-           <StyledOpacity>
-             <StyledCaseContents>
-               <Styledp>
-                Stadium Running
-               </Styledp>
-             </StyledCaseContents>
-           </StyledOpacity>
-        </StyledCaseMain>
-</StyledSmallDevicesWrapper>
+        <StyledWrapper>
+          <StyledCaseMain key="gina" onClick={() => openModal("gina")}>
+            <StyledImg
+              src={Img2}
+              alt="A young woman dances behind graphics for Gina Tricot."
+              loading="eager"
+            />
 
-<StyledWrapper>
-<StyledCaseMain key="gina" onClick={() => openModal("gina")}>
-           <StyledImg
-             src={Img2}
-             alt="A young woman dances behind graphics for Gina Tricot."
-             loading="eager"
-           />
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Gina Tricot</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
+      </StyledGridContainer>
 
-           <StyledOpacity>
-             <StyledCaseContents>
-               <Styledp>
-                Gina Tricot
-               </Styledp>
-             </StyledCaseContents>
-           </StyledOpacity>
-        </StyledCaseMain>
-</StyledWrapper>
-
-</StyledGridContainer>
-
-{selectedId && (
-  <Modal caseId={selectedId} onClose={closeModal} />
-)}
-</>
+      {selectedId && <Modal caseId={selectedId} onClose={closeModal} />}
+    </>
   );
 };
 
-
-
 export default ThreeSplitCard;
-

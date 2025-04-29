@@ -22,8 +22,8 @@ const ModalContent = styled.div`
   grid-template-rows: 1fr auto;
   gap: 16px;
   width: 100vw;
-  /* height: 100dvh;*/
-  height: calc(var(--vh, 1vh) * 100); 
+
+  height: calc(var(--vh, 1vh) * 100);
   background: white;
   border-radius: 6px;
   overflow: hidden;
@@ -38,8 +38,7 @@ const ModalContent = styled.div`
     border-radius: 0px;
   }
   @media (max-width: 720px) {
-    /* padding-top: 80px; */
-    padding-top: calc(80px + env(safe-area-inset-top)); 
+    padding-top: calc(80px + env(safe-area-inset-top));
     height: auto;
     max-height: 100vh;
     overflow-y: auto;
@@ -88,16 +87,6 @@ const AssetVideoWrapper = styled.div`
     `;
   }}
 `;
-
-// const AssetContainer = styled.div`
-//   position: relative;
-//   width: 100%;
-//   max-width: 100%;
-//   height: auto;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
 
 const AssetVideo = styled.video`
   position: absolute;
@@ -158,8 +147,8 @@ const CloseButton = styled.button`
   position: absolute;
   top: 20px;
   right: 10px;
-  width: 50px;   
-  height: 50px; 
+  width: 50px;
+  height: 50px;
   background: rgba(0, 0, 0, 0.977);
   color: white;
   font-size: 2rem;
@@ -249,7 +238,7 @@ const Modal = ({ onClose, caseId }) => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     };
-  
+
     setVH();
     window.addEventListener("resize", setVH);
     return () => window.removeEventListener("resize", setVH);
@@ -259,27 +248,25 @@ const Modal = ({ onClose, caseId }) => {
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
         <AssetWrapper>
-          {/* <AssetContainer> */}
-            <NavArrow direction="left" onClick={goPrev}>
-              ‹
-            </NavArrow>
-            {caseItem.type === "video" ? (
-              <AssetVideoWrapper aspectRatio={aspectRatio}>
-                <AssetVideo
-                  playsInline
-                  autoPlay
-                  controls
-                  loop
-                  src={caseItem.src}
-                />
-              </AssetVideoWrapper>
-            ) : (
-              <AssetImage src={caseItem.src} alt={caseItem.title} />
-            )}
-            <NavArrow direction="right" onClick={goNext}>
-              ›
-            </NavArrow>
-          {/* </AssetContainer> */}
+          <NavArrow direction="left" onClick={goPrev}>
+            ‹
+          </NavArrow>
+          {caseItem.type === "video" ? (
+            <AssetVideoWrapper aspectRatio={aspectRatio}>
+              <AssetVideo
+                playsInline
+                autoPlay
+                controls
+                loop
+                src={caseItem.src}
+              />
+            </AssetVideoWrapper>
+          ) : (
+            <AssetImage src={caseItem.src} alt={caseItem.title} />
+          )}
+          <NavArrow direction="right" onClick={goNext}>
+            ›
+          </NavArrow>
         </AssetWrapper>
 
         <TextWrapper>

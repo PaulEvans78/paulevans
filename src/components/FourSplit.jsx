@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Modal from "./modal"; 
+import Modal from "./modal";
 import Img1 from "/grandiosa.jpg";
 import Img2 from "/newBalanceImg.jpg";
 import Img3 from "/tracyTrackers.jpg";
@@ -7,15 +7,14 @@ import Film2 from "/viagraBoys.mp4";
 import styled from "styled-components";
 
 const StyledGridContainer = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
   width: 100%;
 
   @media (max-width: 960px) {
-  grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
-
 `;
 
 const StyledWrapper = styled.div`
@@ -59,17 +58,16 @@ const StyledCaseContents = styled.div`
 const StyledVideo = styled.video`
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 6px;
 `;
 
 const StyledImg = styled.img`
-    width: 100%;
-    height: 100%;
-  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 6px;
 `;
-
 
 const StyledOpacity = styled.div`
   position: absolute;
@@ -81,7 +79,11 @@ const StyledOpacity = styled.div`
   z-index: 1;
 
   @media (max-width: 960px) {
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.6) 0%, transparent 30%);
+    background: linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.6) 0%,
+      transparent 30%
+    );
     opacity: 1;
   }
 `;
@@ -118,119 +120,96 @@ const StyledCaseMain = styled.section`
 `;
 
 const FourSplitCard = () => {
- 
-const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState(null);
 
-const openModal = (assetId) => {
-  setSelectedId(assetId);
-};
-
-const closeModal = () => {
-  setSelectedId(null);
-};
-
-
-useEffect(() => {
-  if (selectedId) {
-    // Lock scroll
-    document.body.style.overflow = "hidden";
-  } else {
-    // Unlock scroll
-    document.body.style.overflow = "auto";
-  }
-
-  // Clean up if component unmounts while modal is open
-  return () => {
-    document.body.style.overflow = "auto";
+  const openModal = (assetId) => {
+    setSelectedId(assetId);
   };
-}, [selectedId]);
+
+  const closeModal = () => {
+    setSelectedId(null);
+  };
+
+  useEffect(() => {
+    if (selectedId) {
+      // Lock scroll
+      document.body.style.overflow = "hidden";
+    } else {
+      // Unlock scroll
+      document.body.style.overflow = "auto";
+    }
+
+    // Clean up if component unmounts while modal is open
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedId]);
 
   return (
     <>
-    <StyledGridContainer>
-    <StyledWrapper>
-      <StyledCaseMain key="tunn" onClick={() => openModal("tunn")}>
-      <StyledImg
-             src={Img1}
-             alt="A young woman looks into an oven."
-             
-           />
+      <StyledGridContainer>
+        <StyledWrapper>
+          <StyledCaseMain key="tunn" onClick={() => openModal("tunn")}>
+            <StyledImg src={Img1} alt="A young woman looks into an oven." />
 
-        <StyledOpacity>
-          <StyledCaseContents>
-            <Styledp>Grandiosa</Styledp>
-          </StyledCaseContents>
-        </StyledOpacity>
-      </StyledCaseMain>
-    </StyledWrapper>
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Grandiosa</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
 
-<StyledWrapper>
-<StyledCaseMain key="new" onClick={() => openModal("new")}>
-           <StyledImg
-             src={Img2}
-             alt="Red inner soles from New Balance trainers."
-             
-           />
+        <StyledWrapper>
+          <StyledCaseMain key="new" onClick={() => openModal("new")}>
+            <StyledImg
+              src={Img2}
+              alt="Red inner soles from New Balance trainers."
+            />
 
-           <StyledOpacity>
-             <StyledCaseContents>
-               <Styledp>
-                New Balance
-               </Styledp>
-             </StyledCaseContents>
-           </StyledOpacity>
-        </StyledCaseMain>
-</StyledWrapper>
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>New Balance</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
 
-<StyledWrapper>
-<StyledCaseMain key="tracy" onClick={() => openModal("tracy")}>
-           <StyledImg
-             src={Img3}
-             alt="A white dog in a bomber jacket."
-           />
+        <StyledWrapper>
+          <StyledCaseMain key="tracy" onClick={() => openModal("tracy")}>
+            <StyledImg src={Img3} alt="A white dog in a bomber jacket." />
 
-           <StyledOpacity>
-             <StyledCaseContents>
-               <Styledp>
-                Tracy Trackers
-               </Styledp>
-             </StyledCaseContents>
-           </StyledOpacity>
-        </StyledCaseMain>
-</StyledWrapper>
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Tracy Trackers</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
 
-<StyledWrapper>
-<StyledCaseMain key="sports" onClick={() => openModal("sports")}>
-<StyledVideo
-          src={Film2}
-          autoPlay
-          loop
-          muted
-          playsInline
-          alt="A short version of Viagra boys video Sports."
-        />
+        <StyledWrapper>
+          <StyledCaseMain key="sports" onClick={() => openModal("sports")}>
+            <StyledVideo
+              src={Film2}
+              autoPlay
+              loop
+              muted
+              playsInline
+              alt="A short version of Viagra boys video Sports."
+            />
 
-           <StyledOpacity>
-             <StyledCaseContents>
-               <Styledp>
-                Viagra Boys - Sports
-               </Styledp>
-             </StyledCaseContents>
-           </StyledOpacity>
-        </StyledCaseMain>
-</StyledWrapper>
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Viagra Boys - Sports</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
+      </StyledGridContainer>
 
-</StyledGridContainer>
-
-{selectedId && (
-  <Modal caseId={selectedId} onClose={closeModal} />
-)}
-
-</>
+      {selectedId && <Modal caseId={selectedId} onClose={closeModal} />}
+    </>
   );
 };
 
 export default FourSplitCard;
-
-
-

@@ -30,12 +30,10 @@ const StyledCopy = styled.div`
   text-align: center;
   padding-bottom: 60px;
 
-  /* Slide-in animation */
   transform: translateX(-100%);
   animation: slideIn 1s ease-out forwards;
 
   @media (max-width: 960px) {
-    /* width: 90%; */
     align-items: center;
     min-height: 250px;
     padding-top: 0px;
@@ -71,11 +69,10 @@ const StyledText = styled.p`
     font-size: 16px;
   }
 
-  @media (max-width: 768px) {    
+  @media (max-width: 768px) {
     width: 100%;
   }
 `;
-
 
 const StyledIframe = styled.iframe`
   width: 90%;
@@ -83,7 +80,6 @@ const StyledIframe = styled.iframe`
   border-radius: 6px;
   object-fit: cover;
 `;
-
 
 const StyledCaseMain = styled.section`
   position: relative;
@@ -107,23 +103,24 @@ const MusicVideos = () => {
         <h3>Ghost - Hunter's Moon </h3>
 
         <StyledText>
-        Music videos remain one of the most creative formats, I have been lucky enough to work with Artists like Katy Perry, Eagle Eye Cherry and MØ. 
-        Yet one of my favorite projects was shooting the music video for Ghost’s track Hunter’s Moon, 
-        which plays during the end credits of Halloween Kills. Shot under tight deadlines and budget constraints, 
-        the video was a creative challenge that paid off - it’s now reached over 10 million views on YouTube.
+          Music videos remain one of the most creative formats, I have been
+          lucky enough to work with Artists like Katy Perry, Eagle Eye Cherry
+          and MØ. Yet one of my favorite projects was shooting the music video
+          for Ghost’s track Hunter’s Moon, which plays during the end credits of
+          Halloween Kills. Shot under tight deadlines and budget constraints,
+          the video was a creative challenge that paid off - it’s now reached
+          over 10 million views on YouTube.
         </StyledText>
       </StyledCopy>
       <StyledWrapper>
         <StyledCaseMain>
-        <StyledIframe
-  src="https://www.youtube.com/embed/rtkaUZvMaG8?autoplay=1&mute=1&loop=1&playlist=rtkaUZvMaG8"
-  title="Ghost - Hunter's Moon"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-/>
-
-          
+          <StyledIframe
+            src="https://www.youtube.com/embed/rtkaUZvMaG8?autoplay=1&mute=1&loop=1&playlist=rtkaUZvMaG8"
+            title="Ghost - Hunter's Moon"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
         </StyledCaseMain>
       </StyledWrapper>
     </StyledGridContainer>

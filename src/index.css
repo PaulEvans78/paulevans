@@ -50,8 +50,7 @@ h1 {
   font-style: normal;
   font-size: 128px;
   margin: 0;
-  /* margin-bottom: 0.15em; */
- 
+
   @media (max-width: 960px) {
     font-size: 96px;
     font-weight: 400;
@@ -70,13 +69,12 @@ h1 {
 
 h2 {
   font-family: bely-display, sans-serif;
-font-weight: 400;
-font-style: normal;
+  font-weight: 400;
+  font-style: normal;
   font-size: 40px;
   line-height: 1.2;
   margin: 0;
   margin-bottom: 1em;
-  /* color: var(--main-font-color); */
 
   @media (max-width: 768px) {
     font-weight: 400;
@@ -87,8 +85,8 @@ font-style: normal;
 
 h3 {
   font-family: bely-display, sans-serif;
-font-weight: 400;
-font-style: normal;
+  font-weight: 400;
+  font-style: normal;
   font-size: 38px;
   line-height: 1.2;
   margin: 0;
@@ -100,23 +98,6 @@ font-style: normal;
     -webkit-text-stroke: 0.3px;
   }
 }
-/* h3 {
-  font-family: "Gravitas One", serif;
-  font-size: 36px;
-  font-weight: 200;
-  font-style: normal;
-  line-height: 1.1;
-  margin: 0;
-  margin-bottom: 1em;
-
-  @media screen and (max-width: 767px) {
-    font-size: 28px;
-  }
-
-  @media screen and (max-width: 478px) {
-    font-size: 24px;
-  }
-} */
 
 p {
   font-size: 18px;

@@ -52,8 +52,8 @@ const StyledContactContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 2em;
-    padding-right: 0em;
-    text-align: center;
+  padding-right: 0em;
+  text-align: center;
 `;
 
 const StyledMailLink = styled.p`
@@ -62,7 +62,7 @@ const StyledMailLink = styled.p`
   font-weight: 500;
   margin-bottom: -0.5em;
 
-   &:hover {
+  &:hover {
     color: var(--main-button-hover-color);
     text-decoration: underline;
   }
@@ -78,10 +78,8 @@ const StyledTelLink = styled.p`
   display: flex;
   flex-direction: column;
   font-weight: 500;
- 
 
-
-   &:hover {
+  &:hover {
     color: var(--main-button-hover-color);
     text-decoration: underline;
   }
@@ -124,7 +122,6 @@ const IconDes = styled.p`
   text-align: center;
   margin-top: 0.5em;
 
-
   @media screen and (max-width: 960px) {
     &:hover {
       color: inherit;
@@ -137,9 +134,8 @@ const StyledLogoContainer = styled.div`
   padding-left: 0.5em;
 `;
 
-
 const Styledp = styled.p`
-font-family: bely-display, sans-serif;
+  font-family: bely-display, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 18px;
@@ -165,14 +161,14 @@ const StyledIdent = styled.div`
 `;
 
 const StyledLogo = styled.p`
-   font-family: bely-display, sans-serif;
-   font-weight: 400;
-   font-style: normal;
-   font-size: 48px;
-   color: var(--main-font-color);
-   margin-top: 0.25em;
+  font-family: bely-display, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+  color: var(--main-font-color);
+  margin-top: 0.25em;
 
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     font-weight: 400;
     -webkit-text-stroke: 0.3px;
   }
@@ -182,11 +178,9 @@ const Footer = React.forwardRef((props, ref) => (
   <StyledFooter ref={ref}>
     <StyledLogoContainer>
       <Link to="/">
-      <StyledIdent>
-           <StyledLogo> 
-            PE
-           </StyledLogo> 
-          </StyledIdent>
+        <StyledIdent>
+          <StyledLogo>PE</StyledLogo>
+        </StyledIdent>
       </Link>
     </StyledLogoContainer>
     <Icons />

@@ -17,11 +17,11 @@ const StyledNav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* padding-bottom: 1em; */
+
   padding-left: 4em;
   padding-right: 2em;
   box-sizing: border-box;
-  /* background-color: var(--main-hero-backgroundcolor); */
+
   top: ${({ visible }) => (visible ? "0" : "-160px")};
   transition: top 0.6s;
 
@@ -62,8 +62,7 @@ const StyledImgContainer = styled.div`
 const StyledIdent = styled.div`
   display: flex;
   width: 600px;
-  /* height: 100%; */
-  /* padding-left: 0.5em; */
+
   text-align: left;
 
   @media screen and (max-width: 767px) {
@@ -72,16 +71,16 @@ const StyledIdent = styled.div`
 `;
 
 const StyledNavLogo = styled.p`
-   font-family: bely-display, sans-serif;
-   font-weight: 400;
-   font-style: normal;
-   font-size: 48px;
-   color: var(--main-font-color);
-   /* margin-top: 0.25em;*/
-    margin-top: 0em; 
-   margin-bottom: 0;
+  font-family: bely-display, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 48px;
+  color: var(--main-font-color);
 
-   @media (max-width: 768px) {
+  margin-top: 0em;
+  margin-bottom: 0;
+
+  @media (max-width: 768px) {
     font-size: 40px;
     font-weight: 400;
     -webkit-text-stroke: 0.3px;
@@ -99,8 +98,6 @@ const StyledHamburgerPELogo = styled.img`
   }
 `;
 
-
-
 const StyledNavul = styled.ul`
   width: auto;
   display: flex;
@@ -108,7 +105,7 @@ const StyledNavul = styled.ul`
   margin-left: 1em;
   padding-bottom: 0;
   margin-top: 0;
-    margin-bottom: 0em;
+  margin-bottom: 0em;
 
   @media screen and (max-width: 960px) {
     position: fixed;
@@ -149,7 +146,6 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   text-align: right;
   margin: 0em 2em 0em 0em;
-  
 
   &:hover {
     text-decoration: underline;
@@ -217,15 +213,14 @@ const StyledHamburger = styled.div`
 
   @media screen and (max-width: 767px) {
     margin-top: 0.65em;
-    
   }
 `;
 
 const Navbar = ({ footerRef }) => {
   const location = useLocation();
-  const [open, setOpen] = useState(false); // Hamburger menu
+  const [open, setOpen] = useState(false);
   const [activePage, setActivePage] = useState(location.pathname);
-  const [hamburgerActive, setHamburgerActive] = useState(false); // Hamburger menu
+  const [hamburgerActive, setHamburgerActive] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [visible, setVisible] = useState(true);
 
@@ -259,7 +254,7 @@ const Navbar = ({ footerRef }) => {
   const links = [
     { id: 1, to: "/", text: "Home" },
     { id: 2, to: "/about", text: "About" },
-    { id: 3, to: "#", text: "Contact", onClick: scrollToFooter }, // Updated Contact link
+    { id: 3, to: "#", text: "Contact", onClick: scrollToFooter },
   ];
 
   return (
@@ -267,9 +262,7 @@ const Navbar = ({ footerRef }) => {
       <StyledLogoContainer>
         <Link to="/" onClick={handleLinkClick}>
           <StyledIdent>
-           <StyledNavLogo> 
-            PE
-           </StyledNavLogo> 
+            <StyledNavLogo>PE</StyledNavLogo>
           </StyledIdent>
         </Link>
       </StyledLogoContainer>

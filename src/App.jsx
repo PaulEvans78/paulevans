@@ -8,7 +8,6 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
-
 const GridContainer = styled.div`
   min-height: 100%;
   max-width: 100vw;
@@ -36,8 +35,6 @@ const App = () => {
             <Route path="/" element={<Home />} />
 
             <Route path="/about" element={<About />} />
-
-           
           </Routes>
 
           <Footer ref={footerRef} />
@@ -49,4 +46,3 @@ const App = () => {
 };
 
 export default App;
-

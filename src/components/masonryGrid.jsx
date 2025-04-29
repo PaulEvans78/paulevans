@@ -3,7 +3,6 @@
 // import AiBadgeIcon from "/ai_icon.jpg";
 // import Modal from "./modal";
 
-
 // const allMediaItems = [
 //   { id: "lipus", src: "/lipusPlus.jpg", label: "LipusPlus" },
 //   { id: "stadium", src: "/stadiumRunning.jpg", label: "Stadium Running" },
@@ -203,8 +202,18 @@ const allMediaItems = [
   { id: "stadium", src: "/stadiumRunning.jpg", label: "Stadium Running" },
   { id: "sneakers", src: "/stadiumSneakers.mp4", label: "Stadium Sneakers" },
   { id: "beauty", src: "/Beauty.mp4", label: "AI Beauty Concept", isAI: true },
-  { id: "avatar", src: "/Avatar_May_TheElectricState.mp4", label: "AI Avatar - May Rosengren for AI News Reel", isAI: true },
-  { id: "sns", src: "/sns_singles_day.gif", label: "SNS Singles Day (AI)", isAI: true },
+  {
+    id: "avatar",
+    src: "/Avatar_May_TheElectricState.mp4",
+    label: "AI Avatar - May Rosengren for AI News Reel",
+    isAI: true,
+  },
+  {
+    id: "sns",
+    src: "/sns_singles_day.gif",
+    label: "SNS Singles Day (AI)",
+    isAI: true,
+  },
 ];
 
 const MasonryWrapper = styled.div`
@@ -280,7 +289,11 @@ const Overlay = styled.div`
 
   @media (max-width: 960px) {
     opacity: 1;
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.6) 0%, transparent 30%);
+    background: linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.6) 0%,
+      transparent 30%
+    );
   }
 `;
 
@@ -313,7 +326,7 @@ const AIBadge = styled.img`
   background-color: white;
   border-radius: 50%;
   padding: 2px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
 const MasonryGrid = () => {
@@ -344,13 +357,15 @@ const MasonryGrid = () => {
     const handleResize = () => {
       const isMobile = window.innerWidth <= 960;
       const filtered = isMobile
-        ? allMediaItems.filter((item) => !item.src.includes("stadiumRunning.jpg"))
+        ? allMediaItems.filter(
+            (item) => !item.src.includes("stadiumRunning.jpg")
+          )
         : allMediaItems;
       setVisibleItems(filtered);
     };
 
-    handleResize(); // Initial check
-    window.addEventListener("resize", handleResize); // Update on resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -374,9 +389,7 @@ const MasonryGrid = () => {
         ))}
       </MasonryWrapper>
 
-      {selectedId && (
-        <Modal caseId={selectedId} onClose={closeModal} />
-      )}
+      {selectedId && <Modal caseId={selectedId} onClose={closeModal} />}
     </>
   );
 };

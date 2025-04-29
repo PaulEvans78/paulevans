@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import Film from "../assets/ghost.mov";
 import Img from "/Ansiktet.jpg";
 import styled from "styled-components";
-import Modal from "./modal"; 
+import Modal from "./modal";
 
 const StyledGridContainer = styled.div`
-display: grid;
-grid-template-columns: 1.5fr 1fr;
- padding-top: 16px;
-gap: 16px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  padding-top: 16px;
+  gap: 16px;
   width: 100%;
-
 `;
 
 const StyledWrapper = styled.div`
@@ -22,9 +21,8 @@ const StyledWrapper = styled.div`
   border-radius: 6px;
 `;
 
-
 const Styledp = styled.p`
-font-size: 14px;
+  font-size: 14px;
   color: white;
   font-weight: 500;
   opacity: 0;
@@ -52,25 +50,22 @@ const StyledCaseContents = styled.div`
   z-index: 2;
 `;
 
-
-
 const StyledVideo = styled.video`
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 6px;
 `;
 
 const StyledImg = styled.img`
-    width: 100%;
-    height: 100%;
-  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 6px;
 `;
 
-
 const StyledOpacity = styled.div`
- position: absolute;
+  position: absolute;
   inset: 0;
   background: rgba(10, 10, 10, 0.4);
   opacity: 0;
@@ -79,7 +74,11 @@ const StyledOpacity = styled.div`
   z-index: 1;
 
   @media (max-width: 960px) {
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.6) 0%, transparent 30%);
+    background: linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.6) 0%,
+      transparent 30%
+    );
     opacity: 1;
   }
 `;
@@ -116,18 +115,16 @@ const StyledCaseMain = styled.section`
 `;
 
 const TwoSplitCard = () => {
- 
   const [selectedId, setSelectedId] = useState(null);
-  
+
   const openModal = (assetId) => {
     setSelectedId(assetId);
   };
-  
+
   const closeModal = () => {
     setSelectedId(null);
   };
-  
-  
+
   useEffect(() => {
     if (selectedId) {
       // Lock scroll
@@ -136,7 +133,7 @@ const TwoSplitCard = () => {
       // Unlock scroll
       document.body.style.overflow = "auto";
     }
-  
+
     // Clean up if component unmounts while modal is open
     return () => {
       document.body.style.overflow = "auto";
@@ -145,50 +142,45 @@ const TwoSplitCard = () => {
 
   return (
     <>
-    <StyledGridContainer>
-    <StyledWrapper>
-      <StyledCaseMain key="ghost" onClick={() => openModal("ghost")}>
-        <StyledVideo
-          src={Film}
-          autoPlay
-          loop
-          muted
-          playsInline
-          alt="A short peice from the music video Hunters Moon by Ghost."
-        />
+      <StyledGridContainer>
+        <StyledWrapper>
+          <StyledCaseMain key="ghost" onClick={() => openModal("ghost")}>
+            <StyledVideo
+              src={Film}
+              autoPlay
+              loop
+              muted
+              playsInline
+              alt="A short peice from the music video Hunters Moon by Ghost."
+            />
 
-        <StyledOpacity>
-          <StyledCaseContents>
-            <Styledp>Ghost - Hunters Moon</Styledp>
-          </StyledCaseContents>
-        </StyledOpacity>
-      </StyledCaseMain>
-    </StyledWrapper>
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Ghost - Hunters Moon</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
 
-<StyledWrapper>
-<StyledCaseMain key="ansiktet" onClick={() => openModal("ansiktet")}>
-           <StyledImg
-             src={Img}
-             alt="Two men in tracksuits stand by a purple soviet car."
-           />
+        <StyledWrapper>
+          <StyledCaseMain key="ansiktet" onClick={() => openModal("ansiktet")}>
+            <StyledImg
+              src={Img}
+              alt="Two men in tracksuits stand by a purple soviet car."
+            />
 
-           <StyledOpacity>
-             <StyledCaseContents>
-               <Styledp>
-                Ansiktet - Fyra Våningar Upp
-               </Styledp>
-             </StyledCaseContents>
-           </StyledOpacity>
-        </StyledCaseMain>
-</StyledWrapper>
-</StyledGridContainer>
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Ansiktet - Fyra Våningar Upp</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
+      </StyledGridContainer>
 
-{selectedId && (
-  <Modal caseId={selectedId} onClose={closeModal} />
-)}
-</>
+      {selectedId && <Modal caseId={selectedId} onClose={closeModal} />}
+    </>
   );
 };
 
 export default TwoSplitCard;
-

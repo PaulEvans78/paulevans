@@ -12,7 +12,6 @@ const footerData = [
   },
 ];
 
-
 const StyledContentsContainer = styled.section`
   display: flex;
   flex-direction: row;
@@ -47,14 +46,12 @@ const StyledIntro = styled.div`
   font-size: 1.2rem;
   overflow: hidden;
   text-align: center;
-  padding-top: 70px; 
+  padding-top: 70px;
 
-  /* Slide-in animation */
-  transform: translateX(-100%); 
-  animation: slideIn 1s ease-out forwards; 
+  transform: translateX(-100%);
+  animation: slideIn 1s ease-out forwards;
 
   @media (max-width: 960px) {
-    /* width: 90%; */
     align-items: center;
     min-height: 300px;
     padding: 0em 0em 1em 0em;
@@ -63,7 +60,7 @@ const StyledIntro = styled.div`
   @keyframes slideIn {
     from {
       transform: translateX(-100%);
-      opacity: 0; 
+      opacity: 0;
     }
     to {
       transform: translateX(0);
@@ -71,8 +68,6 @@ const StyledIntro = styled.div`
     }
   }
 `;
-
-
 
 const Styledp = styled.p`
   width: 70%;
@@ -130,7 +125,7 @@ const StyledIcon = styled.a`
   justify-content: center;
   align-items: center;
   margin: 1em 1em 0em 1em;
-  color: #277DEE;
+  color: #277dee;
   transition: transform 0.3s ease, color 0.3s ease;
 
   &:hover {
@@ -157,7 +152,6 @@ const IconDes = styled.p`
   color: var(--main-font-color);
   text-align: center;
   margin-top: 0em;
-  
 
   &:hover {
     color: var(--main-button-hover-color);
@@ -170,25 +164,21 @@ const IconDes = styled.p`
   }
 `;
 
-
-
 const Hero = () => {
-  
   return (
     <StyledContentsContainer>
       <StyledIntro>
         <Styledp>
-        I design story-driven content that connects, shaped by my experience in film and television, advertising, UX/UI, and frontend development. 
-        Whether I’m developing concepts, leading creative teams, or bringing ideas to life, I focus on work that’s visually strong, strategically grounded, 
-        and true to the brand. With a focus on emerging technology and a hands-on approach, I bring vision, execution, and results.
+          I design story-driven content that connects, shaped by my experience
+          in film and television, advertising, UX/UI, and frontend development.
+          Whether I’m developing concepts, leading creative teams, or bringing
+          ideas to life, I focus on work that’s visually strong, strategically
+          grounded, and true to the brand. With a focus on emerging technology
+          and a hands-on approach, I bring vision, execution, and results.
         </Styledp>
         <Icons />
-        <StyledIconp>
-          Connect on LinkedIn
-        </StyledIconp>
-
+        <StyledIconp>Connect on LinkedIn</StyledIconp>
       </StyledIntro>
-     
     </StyledContentsContainer>
   );
 };

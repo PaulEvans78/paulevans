@@ -4,20 +4,20 @@ import Img from "/Beauty2.jpg";
 import styled from "styled-components";
 
 const StyledGridContainer = styled.div`
-display: grid;
-grid-template-areas: 
-"copy copy"
-"video video";
- padding-top: 16px;
- padding-bottom: 80px;
-gap: 16px;
+  display: grid;
+  grid-template-areas:
+    "copy copy"
+    "video video";
+  padding-top: 16px;
+  padding-bottom: 80px;
+  gap: 16px;
   width: 100%;
 
   @media (max-width: 767px) {
-    grid-template-areas: 
-    "copy"
-    "video"
-    "video";
+    grid-template-areas:
+      "copy"
+      "video"
+      "video";
   }
 `;
 
@@ -31,7 +31,7 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledCopy = styled.div`
-grid-area: copy;
+  grid-area: copy;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -39,26 +39,23 @@ grid-area: copy;
   font-size: 1.2rem;
   overflow: hidden;
   text-align: center;
-  /* padding-top: 60px; */
-  padding-bottom: 60px; 
-  /* padding-left: 16px; */
 
-  /* Slide-in animation */
-  transform: translateX(-100%); 
-  animation: slideIn 1s ease-out forwards; 
+  padding-bottom: 60px;
+
+  transform: translateX(-100%);
+  animation: slideIn 1s ease-out forwards;
 
   @media (max-width: 960px) {
-    /* width: 90%; */
     align-items: center;
     min-height: 250px;
     padding-top: 0px;
-    padding-bottom: 0px; 
+    padding-bottom: 0px;
   }
 
   @keyframes slideIn {
     from {
       transform: translateX(-100%);
-      opacity: 0; 
+      opacity: 0;
     }
     to {
       transform: translateX(0);
@@ -84,13 +81,13 @@ const StyledText = styled.p`
     width: 80%;
   }
 
-  @media (max-width: 768px) {    
+  @media (max-width: 768px) {
     width: 100%;
   }
 `;
 
 const Styledp = styled.p`
-font-size: 14px;
+  font-size: 14px;
   color: white;
   font-weight: 500;
   opacity: 0;
@@ -118,25 +115,22 @@ const StyledCaseContents = styled.div`
   z-index: 2;
 `;
 
-
-
 const StyledVideo = styled.video`
   width: 100%;
   aspect-ratio: 16/9;
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 6px;
 `;
 
 const StyledImg = styled.img`
-    width: 100%;
-    height: 100%;
-  object-fit: cover; 
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 6px;
 `;
 
-
 const StyledOpacity = styled.div`
- position: absolute;
+  position: absolute;
   inset: 0;
   background: rgba(10, 10, 10, 0.4);
   opacity: 0;
@@ -145,7 +139,11 @@ const StyledOpacity = styled.div`
   z-index: 1;
 
   @media (max-width: 960px) {
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.6) 0%, transparent 30%);
+    background: linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.6) 0%,
+      transparent 30%
+    );
     opacity: 1;
   }
 `;
@@ -182,59 +180,54 @@ const StyledCaseMain = styled.section`
 `;
 
 const Tech = () => {
- 
   return (
     <StyledGridContainer>
       <StyledCopy>
-       
-      <h3>Emerging Technology </h3>
+        <h3>Emerging Technology </h3>
 
-       <StyledText>
-       I have a deep interest in emerging tech, especially AI and AR, and how it can elevate both physical and digital brand experiences. 
-       I use AI tools to quickly generate visual concepts, streamline production workflows, and explore new creative directions. 
-       Whether it's image and video generation or AR-enhanced campaigns, I'm always experimenting with how storytelling can evolve through tech.
-       </StyledText>
-      
+        <StyledText>
+          I have a deep interest in emerging tech, especially AI and AR, and how
+          it can elevate both physical and digital brand experiences. I use AI
+          tools to quickly generate visual concepts, streamline production
+          workflows, and explore new creative directions. Whether it's image and
+          video generation or AR-enhanced campaigns, I'm always experimenting
+          with how storytelling can evolve through tech.
+        </StyledText>
+      </StyledCopy>
+      <StyledWrapper>
+        <StyledCaseMain>
+          <StyledImg
+            src={Img}
+            alt="A black and white image of an afro caribean woman. AI generated."
+          />
 
-     </StyledCopy>
-    <StyledWrapper>
-      <StyledCaseMain>
-      <StyledImg
-             src={Img}
-             alt="A black and white image of an afro caribean woman. AI generated."
-           />
-
-           <StyledOpacity>
-             <StyledCaseContents>
-               <Styledp>
-                AI Beauty concept
-               </Styledp>
-             </StyledCaseContents>
-           </StyledOpacity>
-      </StyledCaseMain>
-    </StyledWrapper>
-
-<StyledWrapper>
-<StyledCaseMain >
-<StyledVideo
-          src={Film}
-          autoPlay
-          loop
-          muted
-          playsInline
-          alt="AI News headlines by an AI avatar."
-        />
-        <StyledOpacity>
-          <StyledCaseContents>
-            <Styledp>AI Avatar - AI News Anchor for AI News Reel</Styledp>
-          </StyledCaseContents>
-        </StyledOpacity>
-          
+          <StyledOpacity>
+            <StyledCaseContents>
+              <Styledp>AI Beauty concept</Styledp>
+            </StyledCaseContents>
+          </StyledOpacity>
         </StyledCaseMain>
-</StyledWrapper>
-</StyledGridContainer>
+      </StyledWrapper>
+
+      <StyledWrapper>
+        <StyledCaseMain>
+          <StyledVideo
+            src={Film}
+            autoPlay
+            loop
+            muted
+            playsInline
+            alt="AI News headlines by an AI avatar."
+          />
+          <StyledOpacity>
+            <StyledCaseContents>
+              <Styledp>AI Avatar - AI News Anchor for AI News Reel</Styledp>
+            </StyledCaseContents>
+          </StyledOpacity>
+        </StyledCaseMain>
+      </StyledWrapper>
+    </StyledGridContainer>
   );
 };
 
 export default Tech;
-

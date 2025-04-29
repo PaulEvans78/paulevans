@@ -6,7 +6,6 @@ import Img4 from "/hellyHansen.jpg";
 import AiBadgeIcon from "/ai_icon.jpg";
 import Modal from "./modal";
 
-
 const StyledGridContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -131,22 +130,20 @@ const AIBadge = styled.img`
   background-color: white;
   border-radius: 50%;
   padding: 2px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
 const FourSplitCard = () => {
-
   const [selectedId, setSelectedId] = useState(null);
-  
+
   const openModal = (assetId) => {
     setSelectedId(assetId);
   };
-  
+
   const closeModal = () => {
     setSelectedId(null);
   };
-  
-  
+
   useEffect(() => {
     if (selectedId) {
       // Lock scroll
@@ -155,7 +152,7 @@ const FourSplitCard = () => {
       // Unlock scroll
       document.body.style.overflow = "auto";
     }
-  
+
     // Clean up if component unmounts while modal is open
     return () => {
       document.body.style.overflow = "auto";
@@ -164,62 +161,60 @@ const FourSplitCard = () => {
 
   return (
     <>
-    <StyledGridContainer>
-      <StyledWrapper>
-        <StyledCaseMain key="aiFood" onClick={() => openModal("aiFood")}>
-          <StyledVideo
-            playsInline
-            autoPlay
-            muted
-            loop
-            preload="auto"
-            src={Film}
-          />
-<AIBadge src={AiBadgeIcon} alt="AI generated content" />
-          <StyledOpacity>
-            <StyledCaseContents>
-              <Styledp>Proof of Concept - AI Foods</Styledp>
-            </StyledCaseContents>
-          </StyledOpacity>
-        </StyledCaseMain>
-      </StyledWrapper>
+      <StyledGridContainer>
+        <StyledWrapper>
+          <StyledCaseMain key="aiFood" onClick={() => openModal("aiFood")}>
+            <StyledVideo
+              playsInline
+              autoPlay
+              muted
+              loop
+              preload="auto"
+              src={Film}
+            />
+            <AIBadge src={AiBadgeIcon} alt="AI generated content" />
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Proof of Concept - AI Foods</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
 
-      <StyledWrapper>
-        <StyledCaseMain key="gael" onClick={() => openModal("gael")}>
-          <StyledImg
-            src={Img3}
-            alt="From behind we see a man, bare chested. With a large leather coat wrapped around him."
-            loading="eager"
-          />
+        <StyledWrapper>
+          <StyledCaseMain key="gael" onClick={() => openModal("gael")}>
+            <StyledImg
+              src={Img3}
+              alt="From behind we see a man, bare chested. With a large leather coat wrapped around him."
+              loading="eager"
+            />
 
-          <StyledOpacity>
-            <StyledCaseContents>
-              <Styledp>Gael x Patrik Fashion Project</Styledp>
-            </StyledCaseContents>
-          </StyledOpacity>
-        </StyledCaseMain>
-      </StyledWrapper>
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Gael x Patrik Fashion Project</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
 
-      <StyledWrapper>
-        <StyledCaseMain key="helly" onClick={() => openModal("helly")}>
-          <StyledImg
-            src={Img4}
-            alt="A Yacht sails torwards a sunset, With the Helly Hansen logo."
-            loading="eager"
-          />
+        <StyledWrapper>
+          <StyledCaseMain key="helly" onClick={() => openModal("helly")}>
+            <StyledImg
+              src={Img4}
+              alt="A Yacht sails torwards a sunset, With the Helly Hansen logo."
+              loading="eager"
+            />
 
-          <StyledOpacity>
-            <StyledCaseContents>
-              <Styledp>Helly Hansen</Styledp>
-            </StyledCaseContents>
-          </StyledOpacity>
-        </StyledCaseMain>
-      </StyledWrapper>
-    </StyledGridContainer>
+            <StyledOpacity>
+              <StyledCaseContents>
+                <Styledp>Helly Hansen</Styledp>
+              </StyledCaseContents>
+            </StyledOpacity>
+          </StyledCaseMain>
+        </StyledWrapper>
+      </StyledGridContainer>
 
-    {selectedId && (
-  <Modal caseId={selectedId} onClose={closeModal} />
-)}
+      {selectedId && <Modal caseId={selectedId} onClose={closeModal} />}
     </>
   );
 };

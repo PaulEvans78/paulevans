@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const StyledContentsContainer = styled.section`
   display: flex;
   flex-direction: row;
@@ -30,24 +29,22 @@ const StyledCopy = styled.div`
   overflow: hidden;
   text-align: center;
   padding-top: 120px;
-  padding-bottom: 120px; 
+  padding-bottom: 120px;
 
-  /* Slide-in animation */
-  transform: translateX(-100%); 
-  animation: slideIn 1s ease-out forwards; 
+  transform: translateX(-100%);
+  animation: slideIn 1s ease-out forwards;
 
   @media (max-width: 960px) {
-    /* width: 90%; */
     align-items: center;
     min-height: 250px;
     padding-top: 0px;
-    padding-bottom: 0px; 
+    padding-bottom: 0px;
   }
 
   @keyframes slideIn {
     from {
       transform: translateX(-100%);
-      opacity: 0; 
+      opacity: 0;
     }
     to {
       transform: translateX(0);
@@ -59,7 +56,6 @@ const StyledCopy = styled.div`
     min-height: 140px;
   }
 `;
-
 
 const Styledp = styled.p`
   width: 70%;
@@ -80,29 +76,21 @@ const Styledp = styled.p`
   }
 `;
 
-
 const Copy = () => {
-  
   return (
     <StyledContentsContainer>
       <StyledCopy>
-       
-
-
         <Styledp>
-        My creative experience is supported by data analysis, trend tracking, and A/B testing, 
-        which help shape content strategies and deliver measurable results. 
-        I stay current with the latest generative AI tools and workflows, 
-        enabling me to quickly develop visual concepts and streamline production while maintaining a balance of efficiency and creativity.
+          My creative experience is supported by data analysis, trend tracking,
+          and A/B testing, which help shape content strategies and deliver
+          measurable results. I stay current with the latest generative AI tools
+          and workflows, enabling me to quickly develop visual concepts and
+          streamline production while maintaining a balance of efficiency and
+          creativity.
         </Styledp>
-       
-
       </StyledCopy>
-     
     </StyledContentsContainer>
   );
 };
-
-
 
 export default Copy;

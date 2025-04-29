@@ -1,13 +1,28 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import AiBadgeIcon from "/ai_icon.jpg";
-import Modal from "./modal"; 
+import Modal from "./modal";
 
 const mediaItems = [
-  { id: "aller", src: "/allerPrintSummer.jpg", label: "Aller Print Summer", isAI: false },
-  { id: "katy", src: "/katyPerryRoar.jpg", label: "Katy Perry ROAR", isAI: false },
+  {
+    id: "aller",
+    src: "/allerPrintSummer.jpg",
+    label: "Aller Print Summer",
+    isAI: false,
+  },
+  {
+    id: "katy",
+    src: "/katyPerryRoar.jpg",
+    label: "Katy Perry ROAR",
+    isAI: false,
+  },
   { id: "gant2", src: "/gant.png", label: "Gant Diamond G", isAI: false },
-  { id: "landrover", src: "/landroverConcept.gif", label: "Land Rover Concept (AI)", isAI: true },
+  {
+    id: "landrover",
+    src: "/landroverConcept.gif",
+    label: "Land Rover Concept (AI)",
+    isAI: true,
+  },
 ];
 
 const MasonryWrapper = styled.div`
@@ -85,7 +100,11 @@ const Overlay = styled.div`
 
   @media (max-width: 960px) {
     opacity: 1;
-    background: linear-gradient(to top, rgba(10, 10, 10, 0.6) 0%, transparent 30%);
+    background: linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.6) 0%,
+      transparent 30%
+    );
   }
 `;
 
@@ -118,13 +137,12 @@ const AIBadge = styled.img`
   background-color: white;
   border-radius: 50%;
   padding: 2px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
 const MasonryGrid = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-const [selectedCaseId, setSelectedCaseId] = useState(null);
-
+  const [selectedCaseId, setSelectedCaseId] = useState(null);
 
   const [visibleItems, setVisibleItems] = useState(mediaItems);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -134,18 +152,19 @@ const [selectedCaseId, setSelectedCaseId] = useState(null);
     setIsModalOpen(true);
   };
 
-  
   useEffect(() => {
     const handleResize = () => {
       const isMobile = window.innerWidth <= 960;
       const filtered = isMobile
-        ? mediaItems.filter((item) => !item.src.includes("landroverConcept.gif"))
+        ? mediaItems.filter(
+            (item) => !item.src.includes("landroverConcept.gif")
+          )
         : mediaItems;
       setVisibleItems(filtered);
     };
 
-    handleResize(); // initial check
-    window.addEventListener("resize", handleResize); // update on resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -153,31 +172,25 @@ const [selectedCaseId, setSelectedCaseId] = useState(null);
   return (
     <>
       <MasonryWrapper>
-      {visibleItems.map(({ id, src, label, isAI }) => (
-  <MasonryItem key={id} onClick={() => openModal(id)}>
-    <HoverOverlay>
-      {src.endsWith(".mp4") || src.endsWith(".webm") ? (
-        <StyledVideo src={src} autoPlay muted loop />
-      ) : (
-        <StyledImage src={src} alt={label} />
-      )}
+        {visibleItems.map(({ id, src, label, isAI }) => (
+          <MasonryItem key={id} onClick={() => openModal(id)}>
+            <HoverOverlay>
+              {src.endsWith(".mp4") || src.endsWith(".webm") ? (
+                <StyledVideo src={src} autoPlay muted loop />
+              ) : (
+                <StyledImage src={src} alt={label} />
+              )}
 
-      <Overlay className="overlay" />
-      <TextOverlay className="label">{label}</TextOverlay>
-      {isAI && <AIBadge src={AiBadgeIcon} alt="AI-generated" />}
-    </HoverOverlay>
-  </MasonryItem>
-))}
-
-
+              <Overlay className="overlay" />
+              <TextOverlay className="label">{label}</TextOverlay>
+              {isAI && <AIBadge src={AiBadgeIcon} alt="AI-generated" />}
+            </HoverOverlay>
+          </MasonryItem>
+        ))}
       </MasonryWrapper>
 
       {isModalOpen && (
-  <Modal
-    onClose={() => setIsModalOpen(false)}
-    caseId={selectedCaseId}
-  />
-        
+        <Modal onClose={() => setIsModalOpen(false)} caseId={selectedCaseId} />
       )}
     </>
   );
