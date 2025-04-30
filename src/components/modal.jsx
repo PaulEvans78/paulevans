@@ -8,11 +8,14 @@ const ModalOverlay = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.782);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
+
+  @media (max-width: 960px) {
+  }
 `;
 
 const ModalContent = styled.div`
@@ -22,8 +25,8 @@ const ModalContent = styled.div`
   grid-template-rows: 1fr auto;
   gap: 16px;
   width: 100vw;
-
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100vh;
+  /* height: calc(var(--vh, 1vh) * 100); */
   background: white;
   border-radius: 6px;
   overflow: hidden;
@@ -36,12 +39,16 @@ const ModalContent = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     border-radius: 0px;
-  }
-  @media (max-width: 720px) {
-    padding-top: calc(80px + env(safe-area-inset-top));
     height: auto;
     max-height: 100vh;
     overflow-y: auto;
+  }
+  @media (max-width: 768px) and (orientation: portrait) {
+    padding-top: calc(80px + env(safe-area-inset-top));
+  }
+
+  @media (max-width: 768px) and (orientation: landscape) {
+    margin-top: 80px;
   }
 `;
 
@@ -49,10 +56,17 @@ const AssetWrapper = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 960px) {
+    height: auto;
+    max-height: 100vh;
+  }
 `;
 
 const AssetImage = styled.img`
@@ -65,27 +79,26 @@ const AssetImage = styled.img`
 const AssetVideoWrapper = styled.div`
   position: relative;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: ${({ aspectRatio }) => {
+    if (aspectRatio === "1:1") return "100%";
+    if (aspectRatio === "16:9") return "56.25%";
+    return "56.25%";
+  }};
+  height: 0;
+  overflow: hidden;
 
-  ${({ aspectRatio }) => {
-    if (aspectRatio === "1:1") {
-      return `
-        padding-top: 100%;
-        height: 0;
-      `;
-    }
-    if (aspectRatio === "16:9") {
-      return `
-        padding-top: 56.25%;
-        height: 0;
-      `;
-    }
-    return `
-      height: 100%;
-    `;
-  }}
+  @media (max-width: 960px) and (orientation: landscape) {
+    height: 100vh;
+    max-height: 100vh;
+  }
+
+  @media (max-width: 768px) and (orientation: landscape) {
+    padding-top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const AssetVideo = styled.video`
@@ -99,6 +112,13 @@ const AssetVideo = styled.video`
 
   @media (max-width: 960px) {
     border-radius: 0px;
+  }
+
+  @media (max-width: 768px) and (orientation: landscape) {
+    position: relative;
+    height: auto;
+    max-height: 100vh;
+    object-fit: contain;
   }
 `;
 
@@ -123,6 +143,7 @@ const Copy = styled.p`
   font-size: 1rem;
   color: #555;
   margin-top: 10px;
+  padding-bottom: 20px;
 `;
 
 const AccompanyingAssets = styled.div`
