@@ -269,6 +269,34 @@ export const casesData = [
     type: "video",
     src: "/vikings.mp4",
     description: "A documentary about how the vikings came about and what became of them. A Viaplay series.",
+  },
+  {
+    id: "viforever",
+    title: "Vi Forever",
+    type: "video",
+    src: "/viforever.mp4",
+    description: "A Swedish Television youth series.",
+  },
+  {
+    id: "goodAdvice",
+    title: "Good Advice",
+    type: "video",
+    src: "/goodAdvice.mov",
+    description: "An award winning short film.",
+  },
+   {
+    id: "gbff",
+    title: "Gothenburg film festival",
+    type: "video",
+    src: "/gbff.mp4",
+    description: "The opening film to Gothenburg Film Festival 2013.",
+  },
+   {
+    id: "streams",
+    title: "Streams Season 2",
+    type: "video",
+    src: "/streams2.mp4",
+    description: "A comedy TV series for Swedish Television.",
   }
 ];
 

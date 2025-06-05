@@ -184,7 +184,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="viforever" onClick={() => openModal("viforever")}>
             <StyledImg
               src="/viForever2.png"
               alt="a teenage girl wears a bra over her clothes while looking in the mirror."
@@ -200,7 +200,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="goodAdvice" onClick={() => openModal("goodAdvice")}>
             <StyledImg
               src="/goodAdvice.png"
               alt="A woman on the phone in a telephone booth."
@@ -216,7 +216,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
        <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="gbff" onClick={() => openModal("gbff")}>
             <StyledImg
               src="/GBFF.png"
               alt="Fares Fares walks onto the beach carrying a flame tourch with a tall ship in the background.."
@@ -232,7 +232,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="streams" onClick={() => openModal("streams")}>
             <StyledImg
               src="/streams.png"
               alt="Two men face off before a boxing match."
