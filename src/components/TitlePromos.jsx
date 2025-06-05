@@ -109,7 +109,7 @@ const AboutMe = () => {
   return (
     <StyledGridContainer>
       <StyledCopy>
-        <h3>Music Videos </h3>
+        <h3>Promos </h3>
 
     
       </StyledCopy>

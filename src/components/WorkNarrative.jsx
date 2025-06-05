@@ -4,8 +4,8 @@ import Modal from "./modal";
 
 import styled from "styled-components";
 
-import Img1 from "/xperiaLindaP2.gif";
-import Img2 from "/ginaTricot.jpg";
+// import Img1 from "/xperiaLindaP2.gif";
+// import Img2 from "/ginaTricot.jpg";
 
 
 const StyledGridContainer = styled.div`
@@ -171,14 +171,14 @@ const ThreeSplitCard = () => {
        <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/vikings.png"
+              alt="a viking looks towards camera while on a long boat."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>The last journey of the vikings </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -187,14 +187,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/viForever2.png"
+              alt="a teenage girl wears a bra over her clothes while looking in the mirror."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Vi Forever </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -203,14 +203,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/goodAdvice.png"
+              alt="A woman on the phone in a telephone booth."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Good Advice </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -219,14 +219,14 @@ const ThreeSplitCard = () => {
        <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/GBFF.png"
+              alt="Fares Fares walks onto the beach carrying a flame tourch with a tall ship in the background.."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Gothenburg Film Festival </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -235,34 +235,19 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/streams.png"
+              alt="Two men face off before a boxing match."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Streams Season 2 </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
         </StyledWrapper>
 
-        <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
-            <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
-              loading="eager"
-            />
-
-            <StyledOpacity>
-              <StyledCaseContents>
-                <Styledp>Linda </Styledp>
-              </StyledCaseContents>
-            </StyledOpacity>
-          </StyledCaseMain>
-        </StyledWrapper>
 
       
       </StyledGridContainer>

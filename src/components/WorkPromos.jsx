@@ -3,10 +3,8 @@ import React, { useState, useEffect } from "react";
 import Modal from "./modal";
 
 import styled from "styled-components";
-import Film from "/thisIsSweden.mp4";
-import Img1 from "/xperiaLindaP2.gif";
-import Img2 from "/ginaTricot.jpg";
-import Img from "/stadiumRunning.jpg";
+
+
 
 const StyledGridContainer = styled.div`
   display: grid;
@@ -171,14 +169,14 @@ const ThreeSplitCard = () => {
        <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/ghost.png"
+              alt="a boy in a mask. Scary horror feeling"
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Ghost - Hunters Moon </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -187,14 +185,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/darin.png"
+              alt="Darin in a blue suit against a pink background."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Darin </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -203,14 +201,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/ViagraBoys.png"
+              alt="A stylised inside tennis hall with the empire watching as a tattooed man sits on a bench."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Viagra Boys - Sports </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -219,14 +217,14 @@ const ThreeSplitCard = () => {
        <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/katyP.png"
+              alt="Katy Perry burning her blue wig."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Katy Perry </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -235,14 +233,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/eagleEye.png"
+              alt="Eagle Eye Cherry driving a bus."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Eagle Eye Cherry</Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -251,14 +249,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/mo.png"
+              alt="MØ biting a gold chain in the dessert."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>MØ </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
