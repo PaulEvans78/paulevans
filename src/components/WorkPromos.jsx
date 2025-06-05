@@ -231,7 +231,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="eagleEye" onClick={() => openModal("eagleEye")}>
             <StyledImg
               src="/eagleEye.png"
               alt="Eagle Eye Cherry driving a bus."
@@ -247,7 +247,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="mo" onClick={() => openModal("mo")}>
             <StyledImg
               src="/mo.png"
               alt="MØ biting a gold chain in the dessert."
