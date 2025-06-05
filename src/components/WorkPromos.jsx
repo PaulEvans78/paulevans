@@ -167,7 +167,7 @@ const ThreeSplitCard = () => {
     <>
       <StyledGridContainer>
        <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="ghost" onClick={() => openModal("ghost")}>
             <StyledImg
               src="/ghost.png"
               alt="a boy in a mask. Scary horror feeling"
@@ -183,7 +183,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="darin" onClick={() => openModal("darin")}>
             <StyledImg
               src="/darin.png"
               alt="Darin in a blue suit against a pink background."
@@ -199,7 +199,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="vBoys" onClick={() => openModal("vBoys")}>
             <StyledImg
               src="/ViagraBoys.png"
               alt="A stylised inside tennis hall with the empire watching as a tattooed man sits on a bench."
@@ -215,7 +215,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
        <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="babyBlue" onClick={() => openModal("babyBlue")}>
             <StyledImg
               src="/katyP.png"
               alt="Katy Perry burning her blue wig."

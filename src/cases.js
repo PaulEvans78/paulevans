@@ -297,6 +297,41 @@ export const casesData = [
     type: "video",
     src: "/streams2.mp4",
     description: "A comedy TV series for Swedish Television.",
+  },
+  {
+    id: "darin",
+    title: "Darin - Superstar",
+    type: "video",
+    src: "/darin.mp4",
+    description: "A Music video for Darin's single Superstar.",
+  },
+   {
+    id: "vBoys",
+    title: "Viagra Boys - Sports",
+    type: "video",
+    src: "/sports.mp4",
+    description: "A Music video for Viagra Boys debut single - sports.",
+  },
+   {
+    id: "babyBlue",
+    title: "Katy Perry Burnig Baby Blue",
+    type: "video",
+    src: "/babyBlue.mp4",
+    description: "One of four spots promoting Katy Perrys album ROAR.",
+  },
+  {
+    id: "eagleEye",
+    title: "Eagle Eye Cherry",
+    type: "video",
+    src: "/eagleEye.mp4",
+    description: "A music video for Eagle Eye Cherry and his single - I like it.",
+  },
+  {
+    id: "mo",
+    title: "MØ XXX",
+    type: "video",
+    src: "/xxx.mp4",
+    description: "A music video for MØ and her single - XXX featuring Diplo.",
   }
 ];
 
