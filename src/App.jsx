@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Cinematography from "./pages/Cinematography";
 import ScrollButton from "./components/ScrollButton/ScrollButton";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
@@ -35,6 +36,8 @@ const App = () => {
             <Route path="/" element={<Home />} />
 
             <Route path="/about" element={<About />} />
+
+            <Route path="/cinematography" element={<Cinematography />} />
           </Routes>
 
           <Footer ref={footerRef} />

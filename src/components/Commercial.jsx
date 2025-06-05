@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 
 const StyledGridContainer = styled.div`
   display: grid;
@@ -68,7 +70,7 @@ const StyledText = styled.p`
   }
 `;
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   width: 70%;
   align-self: center;
   color: #277dee;
@@ -137,13 +139,16 @@ const Commercials = () => {
         </StyledText>
 
         <LinkContainer>
-          <StyledLink
+        <StyledLink to="/cinematography">
+  See more →
+</StyledLink>
+          {/* <StyledLink
             href="https://www.paulevans-dop.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
             See more commercial work →
-          </StyledLink>
+          </StyledLink> */}
         </LinkContainer>
       </StyledCopy>
     </StyledGridContainer>

@@ -60,7 +60,7 @@ const StyledVideo = styled.video`
 const StyledImg = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  We create premium, campaign-ready visuals without the need for crews, sets, or travel. Launch faster, spend smarter, without compromising on quality or vision.
   border-radius: 6px;
 `;
 
