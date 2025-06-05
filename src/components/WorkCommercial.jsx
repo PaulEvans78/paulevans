@@ -165,7 +165,7 @@ const ThreeSplitCard = () => {
     <>
       <StyledGridContainer>
        <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="lawnman" onClick={() => openModal("lawnman")}>
             <StyledImg
               src="/lawnman.png"
               alt="a man made of grass looks to the sky.."
@@ -181,7 +181,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="hemmapizza" onClick={() => openModal("hemmapizza")}>
             <StyledImg
               src="/grandiosa.png"
               alt="A elderly man plays a VR game with his grandchildren behind him"
@@ -197,7 +197,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="stadium" onClick={() => openModal("stadium")}>
             <StyledImg
               src="/stadium.png"
               alt="A female athlete walks way from us carrying her shoes."
@@ -213,7 +213,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
        <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="boxer" onClick={() => openModal("boxer")}>
             <StyledImg
               src="/boxer.png"
               alt="Boxer robbert is bound to a pole by a large fire. Indiana Jones style."
@@ -229,7 +229,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="allerSummerFilm" onClick={() => openModal("allerSummerFilm")}>
             <StyledImg
               src="/aller.png"
               alt="A young woman eats a pink macaroon against a pink background."
@@ -245,7 +245,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="sneakers" onClick={() => openModal("sneakers")}>
             <StyledImg
               src="/stadiumSneakers.png"
               alt="A young man dances on a roof in Los Angeles."
@@ -261,7 +261,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="cod" onClick={() => openModal("cod")}>
             <StyledImg
               src="/cod.png"
               alt="A secret service agent operates a lie detector."
@@ -277,7 +277,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="fruitTella" onClick={() => openModal("fruitTella")}>
             <StyledImg
               src="/fruitTella.png"
               alt="A mother sits on a park bench as her son takes a sweet form her."
@@ -293,7 +293,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="ikea" onClick={() => openModal("ikea")}>
             <StyledImg
               src="/ikea.png"
               alt="An Ikea soft toy looks at us."
@@ -309,7 +309,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="volvo" onClick={() => openModal("volvo")}>
             <StyledImg
               src="/volvo.png"
               alt="A volvo tyre makes it way through a snow storm."
@@ -325,7 +325,7 @@ const ThreeSplitCard = () => {
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="kry" onClick={() => openModal("kry")}>
             <StyledImg
               src="/kry.png"
               alt="A mans hand holds up a number, waiting his turn to see the doctor."
@@ -334,14 +334,14 @@ const ThreeSplitCard = () => {
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Kry </Styledp>
+                <Styledp>Kry - Lloyds apotek </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
         </StyledWrapper>
 
         <StyledWrapper>
-          <StyledCaseMain key="gina" onClick={() => openModal("gina")}>
+          <StyledCaseMain key="gant2" onClick={() => openModal("gant2")}>
             <StyledImg
               src="/gant2.png"
               alt="A man in Gant trousers and jacket sits on a bench in a modern building with a large window and forest behind."

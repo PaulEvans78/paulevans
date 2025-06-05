@@ -4,8 +4,7 @@ import Modal from "./modal";
 
 import styled from "styled-components";
 
-// import Img1 from "/xperiaLindaP2.gif";
-// import Img2 from "/ginaTricot.jpg";
+
 
 
 const StyledGridContainer = styled.div`
@@ -169,7 +168,7 @@ const ThreeSplitCard = () => {
     <>
       <StyledGridContainer>
        <StyledWrapper>
-          <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
+          <StyledCaseMain key="vikings" onClick={() => openModal("vikings")}>
             <StyledImg
               src="/vikings.png"
               alt="a viking looks towards camera while on a long boat."
