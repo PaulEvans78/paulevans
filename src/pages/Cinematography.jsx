@@ -7,12 +7,6 @@ import WorkCommercial from "../components/WorkCommercial";
 import WorkNarrative from "../components/WorkNarrative";
 import WorkPromos from "../components/WorkPromos";
 
-import MusicVideo from "../components/MusicVideo";
-import FilmTv from "../components/FilmTv";
-import Concept from "../components/Concept";
-import UxUi from "../components/UXUI";
-import Tech from "../components/Tech";
-import OutsideWork from "../components/OutsideWork";
 
 
 

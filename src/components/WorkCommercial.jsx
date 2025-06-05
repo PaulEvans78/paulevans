@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 
 import Modal from "./modal";
 
-import styled from "styled-components";
-import Film from "/thisIsSweden.mp4";
-import Img1 from "/xperiaLindaP2.gif";
-import Img2 from "/ginaTricot.jpg";
-import Img from "/stadiumRunning.jpg";
 
 const StyledGridContainer = styled.div`
   display: grid;
@@ -171,14 +167,14 @@ const ThreeSplitCard = () => {
        <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/lawnman.png"
+              alt="a man made of grass looks to the sky.."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Lawn Man </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -187,14 +183,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/grandiosa.png"
+              alt="A elderly man plays a VR game with his grandchildren behind him"
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Grandiosa </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -203,14 +199,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/stadium.png"
+              alt="A female athlete walks way from us carrying her shoes."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Stadium Running </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -219,14 +215,14 @@ const ThreeSplitCard = () => {
        <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/boxer.png"
+              alt="Boxer robbert is bound to a pole by a large fire. Indiana Jones style."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Boxer </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -235,14 +231,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/aller.png"
+              alt="A young woman eats a pink macaroon against a pink background."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Aller Media </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -251,14 +247,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/stadiumSneakers.png"
+              alt="A young man dances on a roof in Los Angeles."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Stadium Sneakers </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -267,14 +263,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/cod.png"
+              alt="A secret service agent operates a lie detector."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Call of Duty - Black ops </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -283,14 +279,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/fruitTella.png"
+              alt="A mother sits on a park bench as her son takes a sweet form her."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Fruit-Tella </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -299,14 +295,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/ikea.png"
+              alt="An Ikea soft toy looks at us."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Ikea </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -315,14 +311,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/volvo.png"
+              alt="A volvo tyre makes it way through a snow storm."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Volvo tyres </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -331,14 +327,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="linda" onClick={() => openModal("linda")}>
             <StyledImg
-              src={Img1}
-              alt="Linda Pira floats mid air in front of a high rise."
+              src="/kry.png"
+              alt="A mans hand holds up a number, waiting his turn to see the doctor."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Linda </Styledp>
+                <Styledp>Kry </Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
@@ -347,14 +343,14 @@ const ThreeSplitCard = () => {
         <StyledWrapper>
           <StyledCaseMain key="gina" onClick={() => openModal("gina")}>
             <StyledImg
-              src={Img2}
-              alt="A young woman dances behind graphics for Gina Tricot."
+              src="/gant2.png"
+              alt="A man in Gant trousers and jacket sits on a bench in a modern building with a large window and forest behind."
               loading="eager"
             />
 
             <StyledOpacity>
               <StyledCaseContents>
-                <Styledp>Gina Tricot</Styledp>
+                <Styledp>Gant Diamond G</Styledp>
               </StyledCaseContents>
             </StyledOpacity>
           </StyledCaseMain>
