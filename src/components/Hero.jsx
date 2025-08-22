@@ -111,8 +111,8 @@ const Hero = () => {
         <StyledOverlay />
 
         <StyledTitle>
-          <h1>Paul Evans</h1>
-          <h2>Content Designer </h2>
+          <h1>Paul Evans fsf</h1>
+          {/* <h2>Cinematographer, AI designer, Creator </h2> */}
         </StyledTitle>
       </StyledContents>
     </StyledContentsContainer>

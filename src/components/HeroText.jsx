@@ -169,12 +169,16 @@ const Hero = () => {
     <StyledContentsContainer>
       <StyledIntro>
         <Styledp>
-          I design story-driven content that connects, shaped by my experience
+          I come from a background as a cinematographer, where I’ve spent years shaping stories through light, 
+          movement, and visual language. 
+          That foundation remains just as relevant in today’s AI-driven landscape, because while the tools may have changed, 
+          the essence of storytelling hasn’t.
+          {/* I design story-driven content that connects, shaped by my experience
           in film and television, advertising, UX/UI, and frontend development.
           Whether I’m developing concepts, leading creative teams, or bringing
           ideas to life, I focus on work that’s visually strong, strategically
           grounded, and true to the brand. With a focus on emerging technology
-          and a hands-on approach, I bring vision, execution, and results.
+          and a hands-on approach, I bring vision, execution, and results. */}
         </Styledp>
         <Icons />
         <StyledIconp>Connect on LinkedIn</StyledIconp>

@@ -81,12 +81,16 @@ const Copy = () => {
     <StyledContentsContainer>
       <StyledCopy>
         <Styledp>
-          My creative experience is supported by data analysis, trend tracking,
+          In a time when content is being produced faster and in greater volumes than ever before, 
+          creativity and narrative expertise are what make the difference between being overlooked and being remembered. 
+          My experience in film and visual storytelling allows me to bring depth, emotion, and clarity to 
+          AI-powered content, ensuring it doesn’t just add to the noise, but stands out with purpose.
+          {/* My creative experience is supported by data analysis, trend tracking,
           and A/B testing, which help shape content strategies and deliver
           measurable results. I stay current with the latest generative AI tools
           and workflows, enabling me to quickly develop visual concepts and
           streamline production while maintaining a balance of efficiency and
-          creativity.
+          creativity. */}
         </Styledp>
       </StyledCopy>
     </StyledContentsContainer>
